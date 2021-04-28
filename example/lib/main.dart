@@ -6,7 +6,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,97 +15,85 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/// SET PRIMARY BUTTON STYLES
+/// creates a [UIButtonDefaults] class with the default styles for your primary button.
+/// These styles can be overridden from the widget at any point.
+final UIButtonDefaults primaryButton = UIButtonDefaults(
+  elevation: 10.0,
+  borderRadius: 50.0,
+  borderColor: Colors.purple,
+  borderWidth: 2.0,
+  labelColor: Colors.purple,
+  bgColor: Colors.white,
+  widthFactor: 0.5,
+);
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Example'),
+        title: Text('Buttons'),
       ),
-      body: Column(
-        children: [
-          /// Disabled + Auto width
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: UIButton(
-              label: "A button",
-              disabled: true,
-              onTap: () => print('dd'),
-              bgColor: Colors.pink,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            ///
+            /// OUTLINED BUTTON
+            /// Using [UIButtonDefaults] [primaryButton]
+            ///
+            UIButton.solid(
+              as: primaryButton,
+              bgColor: Colors.green,
               labelColor: Colors.white,
+              label: "Solid  defaults",
+              onPressed: () => print('Solid defaults'),
             ),
-          ),
+            SizedBox(height: 20),
 
-          /// Full width + Icon
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: UIButton(
-              label: "Full Width",
-              onTap: () => print('on tap'),
-              alignment: Alignment.center,
-              bgColor: Colors.pink,
-              labelColor: Colors.white,
-              size: UIButtonSize.fullScreen,
-              icon: Icon(Icons.arrow_forward_ios_rounded),
+            ///
+            /// OUTLINED BUTTON
+            /// Using [UIButtonDefaults] [primaryButton]
+            ///
+            UIButton.outlined(
+              as: primaryButton,
+              label: "With defaults",
+              onPressed: () => print('With defaults'),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: Row(
-              children: [
-                /// Half width + No bg
-                UIButton(
-                  label: "Half Width",
-                  onTap: () => print('on tap'),
-                  size: UIButtonSize.halfScreen,
-                ),
 
-                /// Half width
-                UIButton(
-                  label: "Half Width",
-                  onTap: () => print('on tap'),
-                  bgColor: Colors.pink,
-                  labelColor: Colors.white,
-                  size: UIButtonSize.halfScreen,
-                ),
-              ],
+            SizedBox(height: 20),
+
+            ///
+            /// OUTLINED BUTTON
+            /// Using [UIButtonDefaults] [primaryButton]
+            /// Being overridden by local styles
+            ///
+            UIButton.outlined(
+              as: primaryButton,
+              label: "Overridden",
+              onPressed: () => print('Overridden'),
+              borderColor: Colors.black,
+              labelColor: Colors.black,
+              bgColor: Colors.white,
+              borderRadius: 5.0,
+              elevation: 5.0,
+              borderWidth: 2.0,
+              widthFactor: 0.5,
             ),
-          ),
 
-          Padding(
-            padding: EdgeInsets.all(16),
+            SizedBox(height: 20),
 
-            /// Half width + solid + roundec
-            child: UIButton(
-              label: "Half Width",
-              onTap: () => print('on tap'),
-              bgColor: Colors.pink,
-              labelColor: Colors.white,
-              size: UIButtonSize.halfScreen,
-              borderRadius: 50,
-              shadow: [
-                BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.3),
-                  blurRadius: 10,
-                ),
-              ],
+            ///
+            /// NATIVE BUTTON
+            /// will display a native button based on the OS
+            ///
+            UIButton.native(
+              label: 'Native Button',
+              onPressed: () => print('native button'),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(16),
-
-            /// Half width + solid + roundec
-            child: UIButton(
-              label: "Half Width",
-              onTap: () => print('on tap'),
-              borderColor: Colors.pink,
-              labelColor: Colors.pink,
-              size: UIButtonSize.halfScreen,
-              appearance: UIButtonAppearance.outlined,
-              borderRadius: 50,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
