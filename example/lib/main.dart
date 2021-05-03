@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
+///
 /// SET PRIMARY BUTTON STYLES
-/// creates a [UIButtonDefaults] class with the default styles for your primary button.
-/// These styles can be overridden from the widget at any point.
-final UIButtonDefaults primaryButton = UIButtonDefaults(
+///
+final primaryButton = UIButtonDefaults(
   elevation: 10.0,
   borderRadius: 50.0,
   borderColor: Colors.purple,
@@ -26,6 +26,19 @@ final UIButtonDefaults primaryButton = UIButtonDefaults(
   labelColor: Colors.purple,
   bgColor: Colors.white,
   widthFactor: 0.5,
+);
+
+///
+/// SET PRIMARY TEXT INPUT STYLES
+///
+final primaryInput = UITextFieldDefaults(
+  borderColor: Colors.black,
+  borderRadius: 20,
+  borderType: UIBorderType.outlineBorder,
+  borderWidth: 2.0,
+  focusBorderColor: Colors.green,
+  hintColor: Colors.white,
+  bgColor: Colors.purple.withOpacity(0.6),
 );
 
 class MyHomePage extends StatelessWidget {
@@ -38,40 +51,50 @@ class MyHomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ///
-            /// OUTLINED BUTTON
-            /// Using [UIButtonDefaults] [primaryButton]
-            ///
+            UIHeading(
+              text: 'Solid Button with icon',
+              heading: 5,
+            ),
+            SizedBox(height: 10),
+
             UIButton.solid(
-              as: primaryButton,
+              label: "Button",
+              onPressed: () => print('Solid defaults'),
               bgColor: Colors.green,
               labelColor: Colors.white,
-              label: "Solid  defaults",
-              onPressed: () => print('Solid defaults'),
+              icon: Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.white,
+                size: 20,
+              ),
             ),
+
             SizedBox(height: 20),
 
-            ///
-            /// OUTLINED BUTTON
-            /// Using [UIButtonDefaults] [primaryButton]
-            ///
+            UIHeading(
+              text: 'Outlined Button with defaults',
+              heading: 5,
+            ),
+            SizedBox(height: 10),
+
             UIButton.outlined(
               as: primaryButton,
-              label: "With defaults",
+              label: "Button",
               onPressed: () => print('With defaults'),
             ),
 
             SizedBox(height: 20),
 
-            ///
-            /// OUTLINED BUTTON
-            /// Using [UIButtonDefaults] [primaryButton]
-            /// Being overridden by local styles
-            ///
+            UIHeading(
+              text: 'Outlined Button with defaults overridden',
+              heading: 5,
+            ),
+            SizedBox(height: 10),
             UIButton.outlined(
               as: primaryButton,
-              label: "Overridden",
+              label: "Button",
               onPressed: () => print('Overridden'),
               borderColor: Colors.black,
               labelColor: Colors.black,
@@ -84,13 +107,45 @@ class MyHomePage extends StatelessWidget {
 
             SizedBox(height: 20),
 
-            ///
-            /// NATIVE BUTTON
-            /// will display a native button based on the OS
-            ///
+            UIHeading(
+              text: 'Native Button',
+              heading: 5,
+            ),
+            SizedBox(height: 10),
+
             UIButton.native(
               label: 'Native Button',
               onPressed: () => print('native button'),
+              bgColor: Colors.blue,
+            ),
+
+            SizedBox(height: 40),
+
+            ///
+            /// INPUT TEXT WITH PRIMARY STYLES
+            ///
+            UITextField(
+              as: primaryInput,
+              hint: 'Email',
+            ),
+
+            SizedBox(height: 40),
+
+            ///
+            /// HEADING
+            ///
+            UIHeading(
+              text: 'Native Text Input',
+              heading: 3,
+            ),
+
+            SizedBox(height: 10),
+
+            ///
+            /// NATIVE INPUT TEXT WITH PRIMARY STYLES
+            ///
+            UITextField.native(
+              hint: 'Email',
             ),
           ],
         ),
