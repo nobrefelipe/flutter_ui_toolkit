@@ -2,11 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_toolkit/flutter_ui_toolkit.dart';
+
 import '../UIUtils.dart';
 import '../models/UIButtonDefaults.dart';
+import 'button_content.dart';
 
-class UIButton extends StatelessWidget {
+class UIButton {
   ///
   /// Outlined Button
   static Widget outlined({
@@ -20,6 +21,7 @@ class UIButton extends StatelessWidget {
     double borderWidth,
     double elevation,
     double widthFactor,
+    Widget icon,
   }) {
     return OutlinedButton(
       onPressed: onPressed,
@@ -40,13 +42,8 @@ class UIButton extends StatelessWidget {
       child: FractionallySizedBox(
         widthFactor: UIUtils.getDouble(as, as?.widthFactor, widthFactor, 1.0),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15.0),
-          child: UIHeading(
-            label,
-            heading: 6,
-            noMargin: true,
-            color: UIUtils.getColor(as, as?.labelColor, labelColor, Colors.blue),
-          ),
+          padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 6.0),
+          child: UIButtonContent(as, label, labelColor, icon),
         ),
       ),
     );
@@ -63,6 +60,7 @@ class UIButton extends StatelessWidget {
     double borderRadius,
     double elevation,
     double widthFactor,
+    Widget icon,
   }) {
     return TextButton(
       onPressed: onPressed,
@@ -79,13 +77,8 @@ class UIButton extends StatelessWidget {
       child: FractionallySizedBox(
         widthFactor: UIUtils.getDouble(as, as?.widthFactor, widthFactor, 1.0),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: UIHeading(
-            label,
-            heading: 6,
-            noMargin: true,
-            color: UIUtils.getColor(as, as?.labelColor, labelColor, Colors.blue),
-          ),
+          padding: const EdgeInsets.all(8.0),
+          child: UIButtonContent(as, label, labelColor, icon),
         ),
       ),
     );
@@ -93,6 +86,7 @@ class UIButton extends StatelessWidget {
 
   ///
   /// Native Buttons
+  ///
   static Widget native({
     Function onPressed,
     String label,
@@ -125,13 +119,5 @@ class UIButton extends StatelessWidget {
         ),
       );
     }
-  }
-
-  // DEFAULT BUTTON HERE ?
-  // Should all buttons be static mehtods?
-  //  .solid, .ghost, .outlined
-  @override
-  Widget build(BuildContext context) {
-    return Text('Text');
   }
 }

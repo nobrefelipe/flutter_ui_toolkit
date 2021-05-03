@@ -1,6 +1,8 @@
 import 'dart:ui';
 
-class UIButtonDefaults {
+import 'UIDefaults.dart';
+
+class UIButtonDefaults extends UIDefaults {
   Color borderColor;
   double borderRadius;
   double borderWidth;
