@@ -1,4 +1,8 @@
 # Flutter UI Toolkit
+```
+The development of this  package is still in progress. More widgets are to come.
+However because the widgets are purely Flutter widgets, you can use it with no fear :)
+```
 
 Flutter UI Toolkit is a pre-built collection of the most used widgets to create apps.
 The idea is that you can use these widgets the way you use classes in HTML and CSS.
@@ -15,7 +19,7 @@ THis is useful when you want to have one widget that displays the right look in 
 #### Outlined button with default styles
 ```
 
-/// Set primary button styling
+/// Set primary button styles
 
 final primary = UIButtonDefaults(
   elevation: 10.0,
@@ -50,7 +54,7 @@ UIButton.native(
 #### Heading
 ```
 
-/// Set primary heading styling
+/// Set article title styles
 
 final articleTitle = UIHeadingDefaults(
     heading: 2,
