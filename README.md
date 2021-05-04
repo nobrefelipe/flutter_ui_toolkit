@@ -53,6 +53,7 @@ UIButton.native(
 /// Set primary heading styling
 
 final articleTitle = UIHeadingDefaults(
+    heading: 2,
     color: Colors.pink,
     fontWeight: FontWeight.bold,
 );
@@ -60,7 +61,6 @@ final articleTitle = UIHeadingDefaults(
 UIHeading(
     as: articleTitle,
     text: 'Heading 2',
-    heading: 2,
     //
     // You can override the color set in mainTitle
     // by defining it again here
