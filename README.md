@@ -91,10 +91,6 @@ UIHeading(
             <td style="color: #0c0;">done</td>
         </tr>
         <tr>
-            <td>Buttons</td>
-            <td style="color: #0c0;">done</td>
-        </tr>
-        <tr>
             <td>Text Inputs</td>
             <td style="color: #0c0;">done</td>
         </tr>
