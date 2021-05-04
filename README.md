@@ -72,6 +72,28 @@ UIHeading(
 ),
 ```
 
+#### Text input
+```
+
+/// Set primary text input styles
+
+final primaryInput = UITextFieldDefaults(
+  borderColor: Colors.black,
+  borderRadius: 20,
+  borderType: UIBorderType.outlineBorder,
+  borderWidth: 2.0,
+  focusBorderColor: Colors.green,
+  hintColor: Colors.white,
+  bgColor: Colors.purple.withOpacity(0.6),
+);
+
+UITextField(
+    as: primaryInput,
+    hint: 'Email',
+),
+
+```
+
 ### Widget and Roadmap
 
 <table>
