@@ -55,7 +55,7 @@ UIButton.native(
     <tbody>
         <tr>
             <td>Buttons</td>
-            <td style="color: #0c0;">done</td>
+            <td style="color: #0c0;"><span style="color: #0c0;"> done</span></td>
         </tr>
         <tr>
             <td>Headings</td>
