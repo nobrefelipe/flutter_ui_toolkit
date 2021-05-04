@@ -32,8 +32,9 @@ UIButton.outlined(
     label: "Button",
     onPressed: () => print('Call API'),
     //
-    // you can override a default style by setting the property again
-    labelColors: Colors.blue,
+    // You can override the labelColor set in primary
+    // by defining it again here
+    labelColor: Colors.blue,
 ),
 
 ```
@@ -51,24 +52,18 @@ UIButton.native(
 
 /// Set primary heading styling
 
-final mainTitle = UIHeadingDefaults(
+final articleTitle = UIHeadingDefaults(
     color: Colors.pink,
     fontWeight: FontWeight.bold,
 );
 
 UIHeading(
-    as: mainTitle,
-    text: 'Heading 1',
-    heading: 1,
-),
-
-/// Override styles
-UIHeading(
-    as: mainTitle,
-    text: 'Heading 1',
-    heading: 1,
+    as: articleTitle,
+    text: 'Heading 2',
+    heading: 2,
     //
-    // Override the color set in mainTitle
+    // You can override the color set in mainTitle
+    // by defining it again here
     color: Colors.blue, 
 ),
 ```
