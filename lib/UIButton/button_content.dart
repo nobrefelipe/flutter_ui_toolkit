@@ -9,10 +9,12 @@ import '../flutter_ui_toolkit.dart';
 // ignore: non_constant_identifier_names
 Widget UIButtonContent(UIButtonDefaults as, String label, Color labelColor, Widget icon) {
   return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Expanded(
-        child: UIButtonLabel(as, label, labelColor),
+        child: Center(
+          child: UIButtonLabel(as, label, labelColor),
+        ),
       ),
       icon ?? SizedBox.shrink(),
     ],
