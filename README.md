@@ -8,17 +8,16 @@ Flutter UI Toolkit is a pre-built collection of the most used widgets to create 
 The idea is that you can use these widgets the way you use classes in HTML and CSS.
 
 The widgets can receive an argument called `as` that will carry the widget's styles.
-The advantage of this method is that we don't need to repeat styling every time we create a new widget.
+The advantage of this approach is that we don't need to repeat styling every time we create a new widget.
 
-In addition to custom styles, this package alo provides `native` look in feel to the widgets.
-THis is useful when you want to have one widget that displays the right look in feel based on the Platform.
+In addition to custom styles, this package also provides `native` look and feel to the widgets.
+This is useful when you want to have one widget that displays the right look and feel based on the Platform.
 
 
 ### Examples
 
 #### Outlined button with default styles
 ```
-
 /// Set primary button styles
 
 final primary = UIButtonDefaults(
@@ -53,7 +52,6 @@ UIButton.native(
 
 #### Heading
 ```
-
 /// Set article title styles
 
 final articleTitle = UIHeadingDefaults(
@@ -74,7 +72,6 @@ UIHeading(
 
 #### Text input
 ```
-
 /// Set primary text input styles
 
 final primaryInput = UITextFieldDefaults(
@@ -101,7 +98,7 @@ UITextField.native(
 ),
 ```
 
-### Widget and Roadmap
+### Widgets and Roadmap
 
 <table>
     <thead style="background-color: #666; color: #fff;">
