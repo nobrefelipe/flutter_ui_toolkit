@@ -14,9 +14,9 @@ THis is useful when you want to have one widget that displays the right look in 
 
 #### Outlined button with default styles
 ```
-///
+
 /// Set primary button styling
-///
+
 final primary = UIButtonDefaults(
   elevation: 10.0,
   borderRadius: 50.0,
@@ -31,6 +31,9 @@ UIButton.outlined(
     as: primary,
     label: "Button",
     onPressed: () => print('Call API'),
+    //
+    // you can override a default style by setting the property again
+    labelColors: Colors.blue,
 ),
 
 ```
@@ -45,18 +48,28 @@ UIButton.native(
 
 #### Heading
 ```
-///
+
 /// Set primary heading styling
-///
-final bigTitle = UIHeadingDefaults(
+
+final mainTitle = UIHeadingDefaults(
     color: Colors.pink,
     fontWeight: FontWeight.bold,
 );
 
 UIHeading(
-    as: bigTitle,
+    as: mainTitle,
     text: 'Heading 1',
     heading: 1,
+),
+
+/// Override styles
+UIHeading(
+    as: mainTitle,
+    text: 'Heading 1',
+    heading: 1,
+    //
+    // Override the color set in mainTitle
+    color: Colors.blue, 
 ),
 ```
 
