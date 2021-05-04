@@ -94,6 +94,13 @@ UITextField(
 
 ```
 
+#### Native text input
+```
+UITextField.native(
+    hint: 'Email',
+),
+```
+
 ### Widget and Roadmap
 
 <table>
