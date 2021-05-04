@@ -15,7 +15,7 @@ THis is useful when you want to have one widget that displays the right look in 
 #### Outlined button with default styles
 ```
 ///
-/// SET PRIMARY BUTTON STYLE
+/// Set primary button styling
 ///
 final primary = UIButtonDefaults(
   elevation: 10.0,
@@ -43,7 +43,24 @@ UIButton.native(
 
 ```
 
-### Widgets
+#### Heading
+```
+///
+/// Set primary heading styling
+///
+final bigTitle = UIHeadingDefaults(
+    color: Colors.pink,
+    fontWeight: FontWeight.bold,
+);
+
+UIHeading(
+    as: bigTitle,
+    text: 'Heading 1',
+    heading: 1,
+),
+```
+
+### Widget and Roadmap
 
 <table>
     <thead style="background-color: #666; color: #fff;">
@@ -55,7 +72,7 @@ UIButton.native(
     <tbody>
         <tr>
             <td>Buttons</td>
-            <td style="color: #0c0;"><span style="color: #0c0;"> done</span></td>
+            <td style="color: #0c0;">done</td>
         </tr>
         <tr>
             <td>Headings</td>
