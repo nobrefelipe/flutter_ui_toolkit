@@ -7,10 +7,12 @@ class UIHeadingDefaults extends UIDefaults {
     this.fontFamily,
     this.fontWeight,
     this.fontSize,
+    this.heading,
   });
 
   final Color color;
   final FontWeight fontWeight;
   final String fontFamily;
   final double fontSize;
+  final int heading;
 }

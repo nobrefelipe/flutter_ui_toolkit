@@ -41,6 +41,12 @@ final primaryInput = UITextFieldDefaults(
   bgColor: Colors.purple.withOpacity(0.6),
 );
 
+final articleTitle = UIHeadingDefaults(
+  color: Colors.pink,
+  fontWeight: FontWeight.bold,
+  heading: 1,
+);
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -135,6 +141,7 @@ class MyHomePage extends StatelessWidget {
             /// HEADING
             ///
             UIHeading(
+              as: articleTitle,
               text: 'Native Text Input',
               heading: 3,
             ),
