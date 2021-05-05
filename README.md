@@ -16,6 +16,9 @@ This is useful when you want to have one widget that displays the right look and
 
 ### Examples
 
+<img src="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202021-05-05%20at%2021.45.34.png?alt=media&token=17db3b6e-04b1-40b6-8aff-a47183fba202" width="400">
+
+
 #### Outlined button with default styles
 ```
 /// Set primary button styles
@@ -39,6 +42,7 @@ UIButton.outlined(
     // by defining it again here
     labelColor: Colors.blue,
 ),
+
 
 ```
 #### Native button
