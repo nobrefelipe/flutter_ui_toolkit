@@ -20,6 +20,34 @@ class MyApp extends StatelessWidget {
   }
 }
 
+///
+/// Creates a Native Dialog Factory
+///
+void _openDialog(BuildContext context) {
+  DialogFactory.showAlertDialog(
+    context,
+    title: Text('Are you sure?'),
+    content: Text('You cannot reverse this action.'),
+    actions: [
+      DialogAction(
+        child: Text('YES'),
+        onPressed: () {
+          ///
+          /// Do Something
+
+          ///
+          /// Close dialog
+          Navigator.of(context).pop();
+        },
+      ),
+      DialogAction(
+        child: Text('NO'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+    ],
+  );
+}
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -57,7 +85,9 @@ class MyHomePage extends StatelessWidget {
             UIButton.solid(
               as: solidButtonStyles,
               label: "Button",
-              onPressed: () => print('Solid defaults'),
+
+              ///  Will open a dialog based on the current OS
+              onPressed: () => _openDialog(context),
               icon: Icon(
                 Icons.arrow_forward_ios_rounded,
                 color: Colors.white,

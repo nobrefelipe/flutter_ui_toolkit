@@ -110,6 +110,45 @@ UITextField.native(
 ),
 ```
 
+#### Dialogs
+```
+/// Creates a Native Dialog Factory
+
+void _openDialog(BuildContext context) {
+  DialogFactory.showAlertDialog(
+    context,
+    title: Text('Are you sure?'),
+    content: Text('You cannot reverse this action.'),
+    actions: [
+      DialogAction(
+        child: Text('YES'),
+        onPressed: () {
+          ///
+          /// Call API
+          callApi();
+
+          ///
+          /// Close dialog
+          Navigator.of(context).pop();
+        },
+      ),
+      DialogAction(
+        child: Text('NO'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+    ],
+  );
+}
+
+/// Will open a dialog based on the current OS
+
+UIButton.solid(
+    as: solidButtonStyles,
+    label: "Open Dialog",
+    onPressed: () => _openDialog(context),
+),
+```
+
 ### Widgets and Roadmap
 
 <table>
@@ -133,11 +172,11 @@ UITextField.native(
             <td style="color: #0c0;">done</td>
         </tr>
         <tr>
-            <td>Modals</td>
-            <td style="color: #ff3434;">in progress</td>
-        </tr>
-       <tr>
             <td>Dialogs</td>
+            <td style="color: #ff3434;">done</td>
+        </tr>
+        <tr>
+            <td>Modals</td>
             <td style="color: #ff3434;">in progress</td>
         </tr>
         <tr>
