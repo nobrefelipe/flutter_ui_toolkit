@@ -16,7 +16,15 @@ This is useful when you want to have one widget that displays the right look and
 
 ### Examples
 
-<img src="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202021-05-05%20at%2021.45.34.png?alt=media&token=17db3b6e-04b1-40b6-8aff-a47183fba202" width="400">
+<table>
+<tr>
+<td><img src="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202021-05-05%20at%2021.45.34.png?alt=media&token=17db3b6e-04b1-40b6-8aff-a47183fba202" width="300"></td>
+<td><span style="width: 40px"></span></td>
+<td><img src="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/android.png?alt=media&token=c8b949d8-de64-4cb9-a7c7-2fa50a395fca" width="300"></td>
+</tr>
+</table>
+
+
 
 
 #### Outlined button with default styles
