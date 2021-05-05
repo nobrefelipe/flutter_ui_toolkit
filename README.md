@@ -109,6 +109,60 @@ UITextField.native(
     hint: 'Email',
 ),
 ```
+#### Action Sheets
+```
+
+/// Creates a Native Action Sheet Factory
+
+void _openActionSheet(BuildContext context) {
+  UIActionSheet.show(
+    context,
+    title: UIHeading(
+      text: 'Select you favorite color',
+      color: Colors.blue,
+      textAlign: TextAlign.center,
+      heading: 5,
+    ),
+    content: Text('We will use the color on your profile.'),
+    // forceAndroid: true,
+    actions: [
+      ActionSheetAction(
+        child: Text('Red'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+      ActionSheetAction(
+        child: Text('Green'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+      ActionSheetAction(
+        child: Text('Bue'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+      ActionSheetAction(
+        child: Text('Pink'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+    ],
+    cancel: ActionSheetAction(
+      child: UIHeading(
+        text: 'Cancel',
+        color: Colors.red,
+        heading: 4,
+      ),
+      onPressed: () => print('Cancel'),
+    ),
+  );
+}
+
+/// Will open  action sheet based on the current OS
+
+UIButton.solid(
+    as: solidButtonStyles,
+    label: "Open Action SHeet",
+    onPressed: () => _openActionSheet(context),
+),
+
+```
 
 #### Dialogs
 ```
@@ -148,6 +202,7 @@ UIButton.solid(
     onPressed: () => _openDialog(context),
 ),
 ```
+
 
 ### Widgets and Roadmap
 
