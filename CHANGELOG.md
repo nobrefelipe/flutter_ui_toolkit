@@ -1,3 +1,6 @@
+## [0.0.1+4] - 05/05/2021.
+
+* Add example screenshots to readme
 ## [0.0.1+3] - 05/05/2021.
 
 * Fixed readme typos
