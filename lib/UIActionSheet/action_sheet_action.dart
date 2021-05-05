@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DialogAction<T> {
-  DialogAction({
+class ActionSheetAction<T> {
+  ActionSheetAction({
     @required this.child,
     @required this.onPressed,
   });

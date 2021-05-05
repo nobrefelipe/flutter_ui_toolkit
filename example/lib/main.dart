@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget {
 }
 
 ///
-/// Creates a Native Dialog Factory
+/// Creates a Native Dialog Fatory
 ///
 void _openDialog(BuildContext context) {
-  DialogFactory.showAlertDialog(
+  UIDialog.show(
     context,
     title: Text('Are you sure?'),
     content: Text('You cannot reverse this action.'),
@@ -33,7 +33,7 @@ void _openDialog(BuildContext context) {
         child: Text('YES'),
         onPressed: () {
           ///
-          /// Do Something
+          /// Do Something here
 
           ///
           /// Close dialog
@@ -45,6 +45,49 @@ void _openDialog(BuildContext context) {
         onPressed: () => Navigator.of(context).pop(),
       ),
     ],
+  );
+}
+
+//
+/// Creates a Native Action Sheet Factory
+///
+void _openActionSheet(BuildContext context) {
+  UIActionSheet.show(
+    context,
+    title: UIHeading(
+      text: 'Select you favorite color',
+      color: Colors.blue,
+      textAlign: TextAlign.center,
+      heading: 5,
+    ),
+    content: Text('We will use the color on your profile.'),
+    // forceAndroid: true,
+    actions: [
+      ActionSheetAction(
+        child: Text('Red'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+      ActionSheetAction(
+        child: Text('Green'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+      ActionSheetAction(
+        child: Text('Bue'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+      ActionSheetAction(
+        child: Text('Pink'),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+    ],
+    cancel: ActionSheetAction(
+      child: UIHeading(
+        text: 'Cancel',
+        color: Colors.red,
+        heading: 4,
+      ),
+      onPressed: () => print('Cancel'),
+    ),
   );
 }
 
@@ -111,7 +154,9 @@ class MyHomePage extends StatelessWidget {
             UIButton.outlined(
               as: outlinedButtonStyles,
               label: "Button",
-              onPressed: () => print('With defaults'),
+
+              ///  Will open a action sheet based on the current OS
+              onPressed: () => _openActionSheet(context),
               icon: Icon(
                 Icons.arrow_forward_ios_rounded,
                 color: Colors.pink,
