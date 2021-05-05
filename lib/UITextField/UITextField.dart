@@ -28,6 +28,7 @@ class UITextField extends StatelessWidget {
     this.bgColor,
     this.floatingLabelBehavior,
     this.suffix,
+    this.prefix,
   });
 
   @required
@@ -52,6 +53,7 @@ class UITextField extends StatelessWidget {
   final Color bgColor;
   final FloatingLabelBehavior floatingLabelBehavior;
   final Widget suffix;
+  final Widget prefix;
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +83,7 @@ class UITextField extends StatelessWidget {
     bool obscureText,
     Function onChanged,
     Widget suffix,
+    Widget prefix,
     TextInputType keyboardType,
     TextEditingController controller,
   }) {
@@ -97,6 +100,7 @@ class UITextField extends StatelessWidget {
         obscureText,
         onChanged,
         suffix,
+        prefix,
         keyboardType,
         controller,
       );
@@ -113,6 +117,7 @@ class UITextField extends StatelessWidget {
         obscureText,
         onChanged,
         suffix,
+        prefix,
         keyboardType,
         controller,
       );
@@ -146,6 +151,7 @@ class UITextField extends StatelessWidget {
         color: UIUtils.getColor(as, as?.labelColor, labelColor, Colors.black),
       ),
       suffixIcon: suffix,
+      prefixIcon: prefix,
       floatingLabelBehavior: floatingLabelBehavior,
     );
   }
@@ -201,6 +207,7 @@ TextFormField androidTextField(
   bool obscureText,
   Function onChanged,
   Widget suffix,
+  Widget prefix,
   TextInputType keyboardType,
   TextEditingController controller,
 ) {
@@ -254,6 +261,7 @@ CupertinoTextField iosTextField(
   bool obscureText,
   Function onChanged,
   Widget suffix,
+  Widget prefix,
   TextInputType keyboardType,
   TextEditingController controller,
 ) {
