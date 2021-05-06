@@ -1,3 +1,5 @@
+## [0.0.2+3] - 06/05/2021.
+* Use universal_io for web support
 ## [0.0.2] - 06/05/2021.
 
 * Upgraded to null-safety
