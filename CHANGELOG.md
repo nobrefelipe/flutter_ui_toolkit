@@ -1,3 +1,7 @@
+## [0.0.1+6] - 06/05/2021.
+
+* Use new buttons styling.
+* Remove FlatButtons.
 ## [0.0.1+5] - 05/05/2021.
 
 * Added UIDialog
