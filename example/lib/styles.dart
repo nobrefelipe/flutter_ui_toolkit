@@ -19,7 +19,6 @@ final solidButtonStyles = UIButtonDefaults(
 /// Outlined Button Styles
 ///
 final outlinedButtonStyles = UIButtonDefaults(
-  elevation: 0.0,
   borderRadius: 50.0,
   labelColor: Colors.pink,
   bgColor: Colors.white,
