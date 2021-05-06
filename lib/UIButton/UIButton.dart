@@ -25,18 +25,34 @@ class UIButton {
   }) {
     return OutlinedButton(
       onPressed: onPressed,
-      style: OutlinedButton.styleFrom(
-        shadowColor: Colors.black,
-        backgroundColor: UIUtils.getColor(as, as?.bgColor, bgColor, Colors.blue),
-        elevation: UIUtils.getDouble(as, as?.elevation, elevation, 1.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-            UIUtils.getDouble(as, as?.borderRadius, borderRadius, 0.0),
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.focused)) return Colors.black12;
+            if (states.contains(MaterialState.hovered)) return Colors.black12;
+            if (states.contains(MaterialState.pressed)) return Colors.black12;
+            return null; // Defer to the widget's default.
+          },
+        ),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            return UIUtils.getColor(as, as?.bgColor, bgColor, Colors.blue);
+          },
+        ),
+        shape: MaterialStateProperty.all<OutlinedBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              UIUtils.getDouble(as, as?.borderRadius, borderRadius, 0.0),
+            ),
           ),
         ),
-        side: BorderSide(
-          width: UIUtils.getDouble(as, as?.borderWidth, borderWidth, 0.0),
-          color: UIUtils.getColor(as, as?.borderColor, borderColor, Colors.transparent),
+        side: MaterialStateProperty.resolveWith<BorderSide>(
+          (Set<MaterialState> states) {
+            return BorderSide(
+              width: UIUtils.getDouble(as, as?.borderWidth, borderWidth, 2.0),
+              color: UIUtils.getColor(as, as?.borderColor, borderColor, Colors.transparent),
+            );
+          },
         ),
       ),
       child: FractionallySizedBox(
@@ -64,13 +80,30 @@ class UIButton {
   }) {
     return TextButton(
       onPressed: onPressed,
-      style: TextButton.styleFrom(
-        shadowColor: Colors.black,
-        backgroundColor: UIUtils.getColor(as, as?.bgColor, bgColor, Colors.blue),
-        elevation: UIUtils.getDouble(as, as?.elevation, elevation, 1.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-            UIUtils.getDouble(as, as?.borderRadius, borderRadius, 0.0),
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.focused)) return Colors.black12;
+            if (states.contains(MaterialState.hovered)) return Colors.black12;
+            if (states.contains(MaterialState.pressed)) return Colors.black12;
+            return null; // Defer to the widget's default.
+          },
+        ),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            return UIUtils.getColor(as, as?.bgColor, bgColor, Colors.blue);
+          },
+        ),
+        elevation: MaterialStateProperty.resolveWith<double>(
+          (Set<MaterialState> states) {
+            return UIUtils.getDouble(as, as?.elevation, elevation, 1.0);
+          },
+        ),
+        shape: MaterialStateProperty.all<OutlinedBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              UIUtils.getDouble(as, as?.borderRadius, borderRadius, 0.0),
+            ),
           ),
         ),
       ),
@@ -111,11 +144,17 @@ class UIButton {
     } else {
       return FractionallySizedBox(
         widthFactor: widthFactor,
-        child: FlatButton(
-          color: bgColor,
-          textColor: labelColor,
-          child: Text(label),
+        child: TextButton(
+          child: Text(
+            label,
+            style: TextStyle(
+              color: labelColor ?? Colors.black,
+            ),
+          ),
           onPressed: onPressed,
+          style: TextButton.styleFrom(
+            backgroundColor: bgColor,
+          ),
         ),
       );
     }
