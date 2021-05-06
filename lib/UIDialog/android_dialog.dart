@@ -17,7 +17,7 @@ class AndroidDialog implements IDialog {
       content: content,
       actions: actions?.map(
         (a) {
-          return FlatButton(
+          return TextButton(
             child: a.child,
             onPressed: a.onPressed,
           );
