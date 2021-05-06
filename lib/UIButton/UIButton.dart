@@ -50,7 +50,8 @@ class UIButton {
           (Set<MaterialState> states) {
             return BorderSide(
               width: UIUtils.getDouble(as, as?.borderWidth, borderWidth, 2.0),
-              color: UIUtils.getColor(as, as?.borderColor, borderColor, Colors.transparent),
+              color: UIUtils.getColor(
+                  as, as?.borderColor, borderColor, Colors.transparent),
             );
           },
         ),
