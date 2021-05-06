@@ -8,7 +8,7 @@ import '../flutter_ui_toolkit.dart';
 ///
 // ignore: non_constant_identifier_names
 Widget UIButtonContent(
-    UIButtonDefaults as, String label, Color labelColor, Widget icon) {
+    UIButtonDefaults? as, String? label, Color? labelColor, Widget? icon) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -26,7 +26,7 @@ Widget UIButtonContent(
 /// Button Label
 ///
 // ignore: non_constant_identifier_names
-Widget UIButtonLabel(UIButtonDefaults as, String label, Color labelColor) {
+Widget UIButtonLabel(UIButtonDefaults? as, String? label, Color? labelColor) {
   return UIHeading(
     text: label,
     color: UIUtils.getColor(as, as?.labelColor, labelColor, Colors.blue),

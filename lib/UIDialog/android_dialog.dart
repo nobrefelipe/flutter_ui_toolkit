@@ -15,14 +15,14 @@ class AndroidDialog implements IDialog {
     return AlertDialog(
       title: title,
       content: content,
-      actions: actions?.map(
+      actions: actions.map(
         (a) {
           return TextButton(
             child: a.child,
-            onPressed: a.onPressed,
+            onPressed: a.onPressed as void Function(),
           );
         },
-      )?.toList(),
+      ).toList(),
     );
   }
 }

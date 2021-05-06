@@ -11,22 +11,22 @@ class UIButton {
   ///
   /// Outlined Button
   static Widget outlined({
-    UIButtonDefaults as,
-    String label,
-    Color labelColor,
-    Function onPressed,
-    Color borderColor,
-    Color bgColor,
-    double borderRadius,
-    double borderWidth,
-    double elevation,
-    double widthFactor,
-    Widget icon,
+    UIButtonDefaults? as,
+    String? label,
+    Color? labelColor,
+    required Function onPressed,
+    Color? borderColor,
+    Color? bgColor,
+    double? borderRadius,
+    double? borderWidth,
+    double? elevation,
+    double? widthFactor,
+    Widget? icon,
   }) {
     return OutlinedButton(
-      onPressed: onPressed,
+      onPressed: onPressed as void Function(),
       style: ButtonStyle(
-        overlayColor: MaterialStateProperty.resolveWith<Color>(
+        overlayColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
             if (states.contains(MaterialState.focused)) return Colors.black12;
             if (states.contains(MaterialState.hovered)) return Colors.black12;
@@ -50,8 +50,7 @@ class UIButton {
           (Set<MaterialState> states) {
             return BorderSide(
               width: UIUtils.getDouble(as, as?.borderWidth, borderWidth, 2.0),
-              color: UIUtils.getColor(
-                  as, as?.borderColor, borderColor, Colors.transparent),
+              color: UIUtils.getColor(as, as?.borderColor, borderColor, Colors.transparent),
             );
           },
         ),
@@ -69,20 +68,20 @@ class UIButton {
   ///
   /// Outlined Button
   static Widget solid({
-    UIButtonDefaults as,
-    String label,
-    Color labelColor,
-    Function onPressed,
-    Color bgColor,
-    double borderRadius,
-    double elevation,
-    double widthFactor,
-    Widget icon,
+    UIButtonDefaults? as,
+    String? label,
+    Color? labelColor,
+    required Function onPressed,
+    Color? bgColor,
+    double? borderRadius,
+    double? elevation,
+    double? widthFactor,
+    Widget? icon,
   }) {
     return TextButton(
-      onPressed: onPressed,
+      onPressed: onPressed as void Function(),
       style: ButtonStyle(
-        overlayColor: MaterialStateProperty.resolveWith<Color>(
+        overlayColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
             if (states.contains(MaterialState.focused)) return Colors.black12;
             if (states.contains(MaterialState.hovered)) return Colors.black12;
@@ -122,39 +121,39 @@ class UIButton {
   /// Native Buttons
   ///
   static Widget native({
-    Function onPressed,
-    String label,
-    Color labelColor,
-    Color bgColor,
-    double widthFactor,
+    Function? onPressed,
+    String? label,
+    Color? labelColor,
+    Color? bgColor,
+    double? widthFactor,
   }) {
     if (Platform.isIOS) {
       return FractionallySizedBox(
         widthFactor: widthFactor,
         child: CupertinoButton(
-          color: bgColor,
+          color: bgColor!,
           child: Text(
-            label,
+            label!,
             style: TextStyle(
               color: labelColor,
             ),
           ),
-          onPressed: onPressed,
+          onPressed: onPressed as void Function(),
         ),
       );
     } else {
       return FractionallySizedBox(
-        widthFactor: widthFactor,
+        widthFactor: widthFactor!,
         child: TextButton(
           child: Text(
-            label,
+            label!,
             style: TextStyle(
               color: labelColor ?? Colors.black,
             ),
           ),
-          onPressed: onPressed,
+          onPressed: onPressed as void Function(),
           style: TextButton.styleFrom(
-            backgroundColor: bgColor,
+            backgroundColor: bgColor!,
           ),
         ),
       );

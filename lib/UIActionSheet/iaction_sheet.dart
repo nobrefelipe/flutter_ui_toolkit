@@ -7,6 +7,6 @@ abstract class IActionSheet {
     Widget title,
     Widget content,
     List<ActionSheetAction> actions,
-    ActionSheetAction cancel,
+    ActionSheetAction? cancel,
   );
 }

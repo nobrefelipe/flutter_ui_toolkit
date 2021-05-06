@@ -10,9 +10,9 @@ class UIHeadingDefaults extends UIDefaults {
     this.heading,
   });
 
-  final Color color;
-  final FontWeight fontWeight;
-  final String fontFamily;
-  final double fontSize;
-  final int heading;
+  final Color? color;
+  final FontWeight? fontWeight;
+  final String? fontFamily;
+  final double? fontSize;
+  final int? heading;
 }

@@ -15,14 +15,14 @@ class IosDialog implements IDialog {
     return CupertinoAlertDialog(
       title: title,
       content: content,
-      actions: actions?.map<Widget>(
+      actions: actions.map<Widget>(
         (a) {
           return CupertinoButton(
             child: a.child,
-            onPressed: a.onPressed,
+            onPressed: a.onPressed as void Function(),
           );
         },
-      )?.toList(),
+      ).toList(),
     );
   }
 }

@@ -15,19 +15,19 @@ class UIHeading extends StatelessWidget {
   });
 
   @required
-  final String text;
-  final UIHeadingDefaults as;
-  final int heading;
-  final Color color;
-  final FontWeight fontWeight;
-  final TextAlign textAlign;
-  final TextOverflow overflow;
-  final String fontFamily;
+  final String? text;
+  final UIHeadingDefaults? as;
+  final int? heading;
+  final Color? color;
+  final FontWeight? fontWeight;
+  final TextAlign? textAlign;
+  final TextOverflow? overflow;
+  final String? fontFamily;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      text,
+      text!,
       style: TextStyle(
         color: UIUtils.getColor(as, as?.color, color, Colors.black),
         fontSize: as?.fontSize ?? getHeadingSize(heading ?? as?.heading),
@@ -43,7 +43,7 @@ class UIHeading extends StatelessWidget {
 ///
 /// Get Heading Size
 ///
-double getHeadingSize(int h) {
+double getHeadingSize(int? h) {
   final Map sizes = {
     1: 28.0,
     2: 24.0,

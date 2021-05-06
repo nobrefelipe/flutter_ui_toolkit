@@ -32,38 +32,38 @@ class UITextField extends StatelessWidget {
   });
 
   @required
-  final String hint;
-  final String label;
-  final UITextFieldDefaults as;
-  final Function(String value) validator;
-  final TextEditingController controller;
-  final double borderRadius;
-  final UIBorderType borderType;
-  final Color borderColor;
-  final Color focusBorderColor;
-  final Color errorBorderColor;
-  final double borderWidth;
-  final Color hintColor;
-  final Color labelColor;
-  final double padding;
-  final bool obscureText;
-  final TextInputType keyboardType;
-  final Function onChanged;
-  final Function onTap;
-  final Color bgColor;
-  final FloatingLabelBehavior floatingLabelBehavior;
-  final Widget suffix;
-  final Widget prefix;
+  final String? hint;
+  final String? label;
+  final UITextFieldDefaults? as;
+  final Function(String value)? validator;
+  final TextEditingController? controller;
+  final double? borderRadius;
+  final UIBorderType? borderType;
+  final Color? borderColor;
+  final Color? focusBorderColor;
+  final Color? errorBorderColor;
+  final double? borderWidth;
+  final Color? hintColor;
+  final Color? labelColor;
+  final double? padding;
+  final bool? obscureText;
+  final TextInputType? keyboardType;
+  final Function? onChanged;
+  final Function? onTap;
+  final Color? bgColor;
+  final FloatingLabelBehavior? floatingLabelBehavior;
+  final Widget? suffix;
+  final Widget? prefix;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: validator,
+      validator: validator as String? Function(String?)?,
       decoration: decoration,
       obscureText: obscureText ?? false,
       keyboardType: keyboardType,
-      onChanged: onChanged,
-      onTap: onTap,
+      onChanged: onChanged as void Function(String)?,
+      onTap: onTap as void Function()?,
       controller: controller,
     );
   }
@@ -72,20 +72,20 @@ class UITextField extends StatelessWidget {
   /// Native Text Fields
   ///
   static Widget native({
-    String hint,
-    String label,
-    Color hintColor,
-    double padding,
-    Color bgColor,
-    Color labelColor,
-    Color borderColor,
-    Color focusBorderColor,
-    bool obscureText,
-    Function onChanged,
-    Widget suffix,
-    Widget prefix,
-    TextInputType keyboardType,
-    TextEditingController controller,
+    String? hint,
+    String? label,
+    Color? hintColor,
+    double? padding,
+    Color? bgColor,
+    Color? labelColor,
+    Color? borderColor,
+    Color? focusBorderColor,
+    bool? obscureText,
+    Function? onChanged,
+    Widget? suffix,
+    Widget? prefix,
+    TextInputType? keyboardType,
+    TextEditingController? controller,
   }) {
     if (Platform.isIOS) {
       return iosTextField(
@@ -159,8 +159,8 @@ class UITextField extends StatelessWidget {
   ///
   /// Input Border Decoration
   ///
-  InputBorder inputBorder({
-    Color borderColor,
+  InputBorder? inputBorder({
+    Color? borderColor,
   }) {
     if (as?.borderType == UIBorderType.outlineBorder || borderType == UIBorderType.outlineBorder) {
       return OutlineInputBorder(
@@ -170,14 +170,14 @@ class UITextField extends StatelessWidget {
           ),
         ),
         borderSide: BorderSide(
-          color: borderColor,
+          color: borderColor!,
           width: UIUtils.getDouble(as, as?.borderWidth, borderWidth, 1.0),
         ),
       );
     } else if (as?.borderType == UIBorderType.underlineBorder || borderType == UIBorderType.underlineBorder) {
       return UnderlineInputBorder(
         borderSide: BorderSide(
-          color: borderColor,
+          color: borderColor!,
           width: UIUtils.getDouble(as, as?.borderWidth, borderWidth, 1.0),
         ),
       );
@@ -196,23 +196,23 @@ enum UIBorderType {
 /// Android Text Field
 ///
 TextFormField androidTextField(
-  String hint,
-  String label,
-  Color hintColor,
-  double padding,
-  Color bgColor,
-  Color labelColor,
-  Color borderColor,
-  Color focusBorderColor,
-  bool obscureText,
-  Function onChanged,
-  Widget suffix,
-  Widget prefix,
-  TextInputType keyboardType,
-  TextEditingController controller,
+  String? hint,
+  String? label,
+  Color? hintColor,
+  double? padding,
+  Color? bgColor,
+  Color? labelColor,
+  Color? borderColor,
+  Color? focusBorderColor,
+  bool? obscureText,
+  Function? onChanged,
+  Widget? suffix,
+  Widget? prefix,
+  TextInputType? keyboardType,
+  TextEditingController? controller,
 ) {
   return TextFormField(
-    onChanged: onChanged,
+    onChanged: onChanged as void Function(String),
     obscureText: obscureText ?? false,
     keyboardType: keyboardType,
     controller: controller,
@@ -250,20 +250,20 @@ TextFormField androidTextField(
 /// iOS Text Field
 ///
 CupertinoTextField iosTextField(
-  String hint,
-  String label,
-  Color hintColor,
-  double padding,
-  Color bgColor,
-  Color labelColor,
-  Color borderColor,
-  Color focusBorderColor,
-  bool obscureText,
-  Function onChanged,
-  Widget suffix,
-  Widget prefix,
-  TextInputType keyboardType,
-  TextEditingController controller,
+  String? hint,
+  String? label,
+  Color? hintColor,
+  double? padding,
+  Color? bgColor,
+  Color? labelColor,
+  Color? borderColor,
+  Color? focusBorderColor,
+  bool? obscureText,
+  Function? onChanged,
+  Widget? suffix,
+  Widget? prefix,
+  TextInputType? keyboardType,
+  TextEditingController? controller,
 ) {
   return CupertinoTextField(
     placeholder: hint,
@@ -278,7 +278,7 @@ CupertinoTextField iosTextField(
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
     ),
     controller: controller,
-    onChanged: onChanged,
+    onChanged: onChanged as void Function(String)?,
     keyboardType: keyboardType,
     suffix: Padding(
       padding: EdgeInsets.only(right: padding ?? 16.0),

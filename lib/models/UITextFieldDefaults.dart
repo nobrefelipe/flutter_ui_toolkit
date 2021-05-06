@@ -6,43 +6,43 @@ import 'UIDefaults.dart';
 class UITextFieldDefaults extends UIDefaults {
   ///
   /// Set the input's border radius
-  final double borderRadius;
+  final double? borderRadius;
 
   ///
   /// Set the input's border type [UIBorderType]
-  final UIBorderType borderType;
+  final UIBorderType? borderType;
 
   ///
   /// Set the input's border color
-  final Color borderColor;
+  final Color? borderColor;
 
   ///
   /// Set the input's FOCUS border color
-  final Color focusBorderColor;
+  final Color? focusBorderColor;
 
   ///
   /// Set the input's ERROR border color
-  final Color errorBorderColor;
+  final Color? errorBorderColor;
 
   ///
   /// Set the input's border width
-  final double borderWidth;
+  final double? borderWidth;
 
   ///
   /// Set the input's hint color
-  final Color hintColor;
+  final Color? hintColor;
 
   ///
   /// Set the input's inner padding
-  final double padding;
+  final double? padding;
 
   ///
   /// Set the input's background color
-  final Color bgColor;
+  final Color? bgColor;
 
   ///
   /// Set the input's label color
-  final Color labelColor;
+  final Color? labelColor;
 
   UITextFieldDefaults({
     this.borderRadius,

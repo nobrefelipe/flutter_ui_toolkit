@@ -12,7 +12,7 @@ class AndroidActionSheet implements IActionSheet {
     Widget title,
     Widget content,
     List<ActionSheetAction> actions,
-    ActionSheetAction cancel,
+    ActionSheetAction? cancel,
   ) {
     return BottomSheet(
       onClosing: () {},
@@ -28,13 +28,13 @@ class AndroidActionSheet implements IActionSheet {
               content,
               const SizedBox(height: 40),
               Column(
-                children: actions?.map(
+                children: actions.map(
                   (action) {
                     return _button(action);
                   },
-                )?.toList(),
+                ).toList(),
               ),
-              _cancelButton(context, cancel),
+              _cancelButton(context, cancel!),
             ],
           ),
         );
@@ -50,7 +50,7 @@ class AndroidActionSheet implements IActionSheet {
           minWidth: double.infinity,
           padding: const EdgeInsets.all(20.0),
           child: action.child,
-          onPressed: action.onPressed,
+          onPressed: action.onPressed as void Function(),
         ),
       ],
     );
@@ -64,7 +64,7 @@ class AndroidActionSheet implements IActionSheet {
           minWidth: double.infinity,
           padding: const EdgeInsets.all(20.0),
           child: cancel.child,
-          onPressed: cancel.onPressed,
+          onPressed: cancel.onPressed as void Function(),
         ),
       ],
     );

@@ -10,11 +10,11 @@ import './ios_dialog.dart';
 /// Renders a dialog based on the [Platform] OS
 ///
 class UIDialog {
-  static Future<T> show<T>(
+  static Future<T?> show<T>(
     BuildContext context, {
-    Widget title,
-    Widget content,
-    List<DialogAction> actions,
+    Widget? title,
+    Widget? content,
+    List<DialogAction>? actions,
     bool forceAndroid = false,
     bool forceIos = false,
   }) {

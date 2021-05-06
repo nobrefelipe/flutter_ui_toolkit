@@ -1,12 +1,12 @@
 name: flutter_ui_toolkit
 description: Flutter UI Toolkit is a pre-built collection of the most used widgets to create apps. The idea is that you can use these widgets the way you use classes in HTML and CSS.
-version: 0.0.1+6
+version: 0.0.1-nullsafety.1
 author: Felipe Nobre<nobrefelipe1@gmail.com>
 homepage: https://github.com/nobrefelipe/flutter_ui_toolkit
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: '>=2.12.0 <3.0.0'
+  flutter: ">=2.0.6"
 
 dependencies:
   flutter:

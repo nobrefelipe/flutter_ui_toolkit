@@ -11,12 +11,12 @@ import 'ios_action_sheet.dart';
 /// Renders a dialog based on the [Platform] OS
 ///
 class UIActionSheet {
-  static Future<T> show<T>(
+  static Future<T?> show<T>(
     BuildContext context, {
-    Widget title,
-    Widget content,
-    List<ActionSheetAction> actions,
-    ActionSheetAction cancel,
+    Widget? title,
+    Widget? content,
+    List<ActionSheetAction>? actions,
+    ActionSheetAction? cancel,
     bool forceAndroid = false,
     bool forceIos = false,
   }) {

@@ -12,24 +12,24 @@ class IosActionSheet implements IActionSheet {
     Widget title,
     Widget content,
     List<ActionSheetAction> actions,
-    ActionSheetAction cancel,
+    ActionSheetAction? cancel,
   ) {
     return CupertinoActionSheet(
       title: title,
       message: content,
       cancelButton: CupertinoActionSheetAction(
-        child: cancel.child,
+        child: cancel!.child,
         isDefaultAction: true,
         onPressed: () => Navigator.pop(context, 'Cancel'),
       ),
-      actions: actions?.map<Widget>(
+      actions: actions.map<Widget>(
         (a) {
           return CupertinoActionSheetAction(
             child: a.child,
-            onPressed: a.onPressed,
+            onPressed: a.onPressed as void Function(),
           );
         },
-      )?.toList(),
+      ).toList(),
     );
   }
 }

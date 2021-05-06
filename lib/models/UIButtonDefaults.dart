@@ -5,31 +5,31 @@ import 'UIDefaults.dart';
 class UIButtonDefaults extends UIDefaults {
   ///
   /// Sets the button's border color
-  Color borderColor;
+  Color? borderColor;
 
   ///
   /// Sets the button's border radius
-  double borderRadius;
+  double? borderRadius;
 
   ///
   /// Sets the button's border width
-  double borderWidth;
+  double? borderWidth;
 
   ///
   /// Sets the button's elevation
-  double elevation;
+  double? elevation;
 
   ///
   /// Sets the button's label color
-  Color labelColor;
+  Color? labelColor;
 
   ///
   /// Sets the button's background color
-  Color bgColor;
+  Color? bgColor;
 
   ///
   /// Sets the button's size percentage
-  double widthFactor;
+  double? widthFactor;
 
   UIButtonDefaults({
     this.borderColor,
