@@ -1,3 +1,6 @@
+## [0.0.1-nullsafety.1] - 06/05/2021.
+
+* Upgraded to null-safety
 ## [0.0.1+6] - 06/05/2021.
 
 * Use new buttons styling.
