@@ -6,7 +6,7 @@ homepage: https://github.com/nobrefelipe/flutter_ui_toolkit
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
-  flutter: ">=2.0.6"
+  flutter: ">=2.0.5"
 
 dependencies:
   flutter:
