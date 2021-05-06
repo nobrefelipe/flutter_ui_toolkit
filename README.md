@@ -14,6 +14,50 @@ In addition to custom styles, this package also provides `native` look and feel 
 This is useful when you want to have one widget that displays the right look and feel based on the Platform.
 
 
+
+### Widgets and Roadmap
+
+<table>
+    <thead style="background-color: #666; color: #fff;">
+        <tr>
+            <td>Widget</td>
+            <td>Status</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Buttons</td>
+            <td style="color: #0c0;">done</td>
+        </tr>
+        <tr>
+            <td>Headings</td>
+            <td style="color: #0c0;">done</td>
+        </tr>
+        <tr>
+            <td>Text Inputs</td>
+            <td style="color: #0c0;">done</td>
+        </tr>
+        <tr>
+            <td>Dialogs</td>
+            <td style="color: #ff3434;">done</td>
+        </tr>
+         <tr>
+            <td>Action Sheets</td>
+            <td style="color: #ff3434;">done</td>
+        </tr>
+        <tr>
+            <td>Modals</td>
+            <td style="color: #ff3434;">in progress</td>
+        </tr>
+        <tr>
+            <td>Bottom Sheets</td>
+            <td style="color: #ff3434;">in progress</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
 ### Examples
 
 <table>
@@ -202,47 +246,4 @@ UIButton.solid(
     onPressed: () => _openDialog(context),
 ),
 ```
-
-
-### Widgets and Roadmap
-
-<table>
-    <thead style="background-color: #666; color: #fff;">
-        <tr>
-            <td>Widget</td>
-            <td>Status</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Buttons</td>
-            <td style="color: #0c0;">done</td>
-        </tr>
-        <tr>
-            <td>Headings</td>
-            <td style="color: #0c0;">done</td>
-        </tr>
-        <tr>
-            <td>Text Inputs</td>
-            <td style="color: #0c0;">done</td>
-        </tr>
-        <tr>
-            <td>Dialogs</td>
-            <td style="color: #ff3434;">done</td>
-        </tr>
-        <tr>
-            <td>Modals</td>
-            <td style="color: #ff3434;">in progress</td>
-        </tr>
-        <tr>
-            <td>Action Sheets</td>
-            <td style="color: #ff3434;">in progress</td>
-        </tr>
-        <tr>
-            <td>Bottom Sheets</td>
-            <td style="color: #ff3434;">in progress</td>
-        </tr>
-    </tbody>
-</table>
-
 
