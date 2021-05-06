@@ -130,13 +130,16 @@ class UITextField extends StatelessWidget {
   InputDecoration get decoration {
     return InputDecoration(
       enabledBorder: inputBorder(
-        borderColor: UIUtils.getColor(as, as?.borderColor, borderColor, Colors.blue),
+        borderColor:
+            UIUtils.getColor(as, as?.borderColor, borderColor, Colors.blue),
       ),
       focusedBorder: inputBorder(
-        borderColor: UIUtils.getColor(as, as?.focusBorderColor, focusBorderColor, Colors.blue),
+        borderColor: UIUtils.getColor(
+            as, as?.focusBorderColor, focusBorderColor, Colors.blue),
       ),
       errorBorder: inputBorder(
-        borderColor: UIUtils.getColor(as, as?.errorBorderColor, errorBorderColor, Colors.red),
+        borderColor: UIUtils.getColor(
+            as, as?.errorBorderColor, errorBorderColor, Colors.red),
       ),
       fillColor: UIUtils.getColor(as, as?.bgColor, bgColor, Colors.transparent),
       filled: bgColor != null || as?.bgColor != null,
@@ -162,7 +165,8 @@ class UITextField extends StatelessWidget {
   InputBorder? inputBorder({
     Color? borderColor,
   }) {
-    if (as?.borderType == UIBorderType.outlineBorder || borderType == UIBorderType.outlineBorder) {
+    if (as?.borderType == UIBorderType.outlineBorder ||
+        borderType == UIBorderType.outlineBorder) {
       return OutlineInputBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(
@@ -174,7 +178,8 @@ class UITextField extends StatelessWidget {
           width: UIUtils.getDouble(as, as?.borderWidth, borderWidth, 1.0),
         ),
       );
-    } else if (as?.borderType == UIBorderType.underlineBorder || borderType == UIBorderType.underlineBorder) {
+    } else if (as?.borderType == UIBorderType.underlineBorder ||
+        borderType == UIBorderType.underlineBorder) {
       return UnderlineInputBorder(
         borderSide: BorderSide(
           color: borderColor!,
