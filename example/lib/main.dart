@@ -127,7 +127,7 @@ class MyHomePage extends StatelessWidget {
             ///
             UIButton.solid(
               as: solidButtonStyles,
-              label: "Button",
+              label: "Open Dialog",
 
               ///  Will open a dialog based on the current OS
               onPressed: () => _openDialog(context),
@@ -153,7 +153,7 @@ class MyHomePage extends StatelessWidget {
             ///
             UIButton.outlined(
               as: outlinedButtonStyles,
-              label: "Button",
+              label: "Open Action Sheet",
 
               ///  Will open a action sheet based on the current OS
               onPressed: () => _openActionSheet(context),
