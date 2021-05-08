@@ -12,6 +12,7 @@ class UIHeading extends StatelessWidget {
     this.textAlign,
     this.overflow,
     this.fontFamily,
+    this.style,
   });
 
   @required
@@ -23,17 +24,20 @@ class UIHeading extends StatelessWidget {
   final TextAlign? textAlign;
   final TextOverflow? overflow;
   final String? fontFamily;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text!,
-      style: TextStyle(
-        color: UIUtils.getColor(as, as?.color, color, Colors.black),
-        fontSize: as?.fontSize ?? getHeadingSize(heading ?? as?.heading),
-        fontWeight: as?.fontWeight ?? fontWeight ?? FontWeight.normal,
-        fontFamily: as?.fontFamily ?? fontFamily ?? null,
-      ),
+      style: (style == null)
+          ? TextStyle(
+              color: UIUtils.getColor(as, as?.color, color, Colors.black),
+              fontSize: as?.fontSize ?? getHeadingSize(heading ?? as?.heading),
+              fontWeight: as?.fontWeight ?? fontWeight ?? FontWeight.normal,
+              fontFamily: as?.fontFamily ?? fontFamily ?? null,
+            )
+          : style,
       textAlign: textAlign ?? TextAlign.left,
       overflow: overflow,
     );

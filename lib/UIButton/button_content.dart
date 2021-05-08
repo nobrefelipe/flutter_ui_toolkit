@@ -7,8 +7,7 @@ import '../flutter_ui_toolkit.dart';
 /// Button Content
 ///
 // ignore: non_constant_identifier_names
-Widget UIButtonContent(
-    UIButtonDefaults? as, String? label, Color? labelColor, Widget? icon) {
+Widget UIButtonContent(UIButtonDefaults? as, String? label, Color? labelColor, Widget? icon) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
