@@ -30,14 +30,14 @@ class UIHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text!,
-      style: (style == null)
+      style: (as?.style == null && style == null)
           ? TextStyle(
               color: UIUtils.getColor(as, as?.color, color, Colors.black),
               fontSize: as?.fontSize ?? getHeadingSize(heading ?? as?.heading),
               fontWeight: as?.fontWeight ?? fontWeight ?? FontWeight.normal,
               fontFamily: as?.fontFamily ?? fontFamily ?? null,
             )
-          : style,
+          : as?.style ?? style,
       textAlign: textAlign ?? TextAlign.left,
       overflow: overflow,
     );

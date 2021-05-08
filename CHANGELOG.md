@@ -1,3 +1,5 @@
+## [0.0.2+7] - 08/05/2021.
+* Fix styles for UIHeading
 ## [0.0.2+6] - 08/05/2021.
 * add override styles for UIHeading
 ## [0.0.2+5] - 08/05/2021.
