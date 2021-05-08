@@ -64,7 +64,10 @@ class AndroidActionSheet implements IActionSheet {
           minWidth: double.infinity,
           padding: const EdgeInsets.all(20.0),
           child: cancel.child,
-          onPressed: cancel.onPressed as void Function(),
+          onPressed: () {
+            cancel.onPressed as void Function();
+            Navigator.pop(context, 'Cancel');
+          },
         ),
       ],
     );

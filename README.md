@@ -90,7 +90,7 @@ UIButton.outlined(
     label: "Button",
     onPressed: () => print('Call API'),
     //
-    // You can override the labelColor set in primary
+    // You can override styles set in primary
     // by defining it again here
     labelColor: Colors.blue,
 ),
@@ -119,10 +119,6 @@ final articleTitle = UIHeadingDefaults(
 UIHeading(
     as: articleTitle,
     text: 'Heading 2',
-    //
-    // You can override the color set in mainTitle
-    // by defining it again here
-    color: Colors.blue, 
 ),
 ```
 

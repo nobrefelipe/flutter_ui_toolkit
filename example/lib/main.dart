@@ -209,6 +209,7 @@ class MyHomePage extends StatelessWidget {
               as: primaryInput,
               hint: 'Email',
               prefix: Icon(Icons.email_outlined),
+              onChanged: (value) => print(value),
             ),
             SizedBox(height: 20),
 
@@ -227,6 +228,7 @@ class MyHomePage extends StatelessWidget {
             UITextField.native(
               hint: 'Search',
               label: 'Search',
+              onChanged: (value) => print(value),
               suffix: Icon(Icons.search_rounded),
             ),
           ],

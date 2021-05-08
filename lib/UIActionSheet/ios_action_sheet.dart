@@ -20,7 +20,10 @@ class IosActionSheet implements IActionSheet {
       cancelButton: CupertinoActionSheetAction(
         child: cancel!.child,
         isDefaultAction: true,
-        onPressed: () => Navigator.pop(context, 'Cancel'),
+        onPressed: () {
+          cancel.onPressed as void Function();
+          Navigator.pop(context, 'Cancel');
+        },
       ),
       actions: actions.map<Widget>(
         (a) {

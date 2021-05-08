@@ -25,7 +25,7 @@ class UIDialog {
     ///
     /// [dialogData] will be either a [IosDialog] or [AndroidDialog]
     ///
-    if ((Platform.isIOS || forceIos) && !forceAndroid) {
+    if ((Platform.isIOS || Platform.isMacOS || forceIos) && !forceAndroid) {
       dialogData = IosDialog();
     } else if ((Platform.isAndroid || forceAndroid) && !forceIos) {
       dialogData = AndroidDialog();

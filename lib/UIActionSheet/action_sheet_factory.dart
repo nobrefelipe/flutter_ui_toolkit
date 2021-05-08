@@ -27,7 +27,7 @@ class UIActionSheet {
     ///
     /// [dialogData] will be either a [IosDialog] or [AndroidDialog]
     ///
-    if ((Platform.isIOS || forceIos) && !forceAndroid) {
+    if ((Platform.isIOS || forceIos || Platform.isMacOS) && !forceAndroid) {
       dialogData = IosActionSheet();
     } else if ((Platform.isAndroid || forceAndroid) && !forceIos) {
       dialogData = AndroidActionSheet();

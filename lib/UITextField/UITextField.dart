@@ -22,7 +22,7 @@ class UITextField extends StatelessWidget {
     this.padding,
     this.obscureText,
     this.keyboardType,
-    this.onChanged,
+    required this.onChanged,
     this.onTap,
     this.controller,
     this.bgColor,
@@ -48,7 +48,7 @@ class UITextField extends StatelessWidget {
   final double? padding;
   final bool? obscureText;
   final TextInputType? keyboardType;
-  final Function? onChanged;
+  final Function onChanged;
   final Function? onTap;
   final Color? bgColor;
   final FloatingLabelBehavior? floatingLabelBehavior;
@@ -62,7 +62,7 @@ class UITextField extends StatelessWidget {
       decoration: decoration,
       obscureText: obscureText ?? false,
       keyboardType: keyboardType,
-      onChanged: onChanged as void Function(String)?,
+      onChanged: onChanged as void Function(String),
       onTap: onTap as void Function()?,
       controller: controller,
     );
@@ -81,7 +81,7 @@ class UITextField extends StatelessWidget {
     Color? borderColor,
     Color? focusBorderColor,
     bool? obscureText,
-    Function? onChanged,
+    required Function onChanged,
     Widget? suffix,
     Widget? prefix,
     TextInputType? keyboardType,
@@ -259,7 +259,7 @@ CupertinoTextField iosTextField(
   Color? borderColor,
   Color? focusBorderColor,
   bool? obscureText,
-  Function? onChanged,
+  Function onChanged,
   Widget? suffix,
   Widget? prefix,
   TextInputType? keyboardType,
@@ -278,7 +278,7 @@ CupertinoTextField iosTextField(
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
     ),
     controller: controller,
-    onChanged: onChanged as void Function(String)?,
+    onChanged: onChanged as void Function(String),
     keyboardType: keyboardType,
     suffix: Padding(
       padding: EdgeInsets.only(right: padding ?? 16.0),

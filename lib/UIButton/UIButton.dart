@@ -131,19 +131,19 @@ class UIButton {
       return FractionallySizedBox(
         widthFactor: widthFactor,
         child: CupertinoButton(
-          color: bgColor!,
+          color: bgColor,
           child: Text(
             label!,
             style: TextStyle(
               color: labelColor,
             ),
           ),
-          onPressed: onPressed as void Function(),
+          onPressed: onPressed as void Function()?,
         ),
       );
     } else {
       return FractionallySizedBox(
-        widthFactor: widthFactor!,
+        widthFactor: widthFactor,
         child: TextButton(
           child: Text(
             label!,
@@ -151,9 +151,9 @@ class UIButton {
               color: labelColor ?? Colors.black,
             ),
           ),
-          onPressed: onPressed as void Function(),
+          onPressed: onPressed as void Function()?,
           style: TextButton.styleFrom(
-            backgroundColor: bgColor!,
+            backgroundColor: bgColor,
           ),
         ),
       );
