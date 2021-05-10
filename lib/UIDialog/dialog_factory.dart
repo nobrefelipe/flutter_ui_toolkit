@@ -2,7 +2,7 @@ import 'package:universal_io/io.dart';
 
 import 'package:flutter/material.dart';
 import './android_dialog.dart';
-import './dialog_action.dart';
+import '../models/UIAction.dart';
 import './idialog.dart';
 import './ios_dialog.dart';
 
@@ -14,7 +14,7 @@ class UIDialog {
     BuildContext context, {
     Widget? title,
     Widget? content,
-    List<DialogAction>? actions,
+    List<UIAction>? actions,
     bool forceAndroid = false,
     bool forceIos = false,
   }) {

@@ -4,8 +4,10 @@ The development of this  package is still in progress. More widgets are to come.
 However because the widgets are purely Flutter widgets, you can use it with no fear :)
 ```
 
-Flutter UI Toolkit is a pre-built collection of the most used widgets to create apps.
-The idea is that you can use these widgets the way you use classes in HTML and CSS.
+Flutter UI Toolkit is a pre-built collection of the most used widgets to create apps, 
+the basic ones like:  Buttons, Inputs, Headings, Dialogs, Action Sheets, etc..
+
+The idea is that you can use these widgets the way you use classes in HTML and CSS and be a simple helper.
 
 The widgets can receive an argument called `as` that will carry the widget's styles.
 The advantage of this approach is that we don't need to repeat styling every time we create a new widget.
@@ -15,7 +17,7 @@ This is useful when you want to have one widget that displays the right look and
 
 
 
-### Widgets and Roadmap
+## Widgets and Roadmap
 
 <table>
     <thead style="background-color: #666; color: #fff;">
@@ -58,7 +60,7 @@ This is useful when you want to have one widget that displays the right look and
 
 
 
-### Examples
+## Examples
 
 <table>
 <tr>
@@ -70,12 +72,26 @@ This is useful when you want to have one widget that displays the right look and
 
 
 
+## `UIButton`
 
-#### Outlined button with default styles
+
+This class provides a full customizable button.
+
+There are three kind of buttons  you can choose from:
 ```
-/// Set primary button styles
+UIButton.solid(),
+UIButton.outlined(),
+UIButton.native(),
+```
 
-final primary = UIButtonDefaults(
+To create default styles for the button you need to create a class of type `UIButtonDefaults`.
+
+You can have a separated directory where you add all your default styles.
+```
+
+// styles/buttons.dart
+
+final primaryButton = UIButtonDefaults(
   elevation: 10.0,
   borderRadius: 50.0,
   borderColor: Colors.purple,
@@ -84,31 +100,50 @@ final primary = UIButtonDefaults(
   bgColor: Colors.white,
   widthFactor: 0.5, // sets the button width
 );
+```
 
+Then use the button anywhere on you application. 
+```
+
+import 'styles/buttons.dart';
+
+// Outlined Button
 UIButton.outlined(
-    as: primary,
-    label: "Button",
+    as: primaryButton,
+    label: "Outlined Button",
     onPressed: () => print('Call API'),
-    //
-    // You can override styles set in primary
-    // by defining it again here
-    labelColor: Colors.blue,
+),
+
+// Solid Button
+UIButton.solid(
+    as: primaryButton,
+    label: "Solid Button",
+    onPressed: () => print('Call API'),
 ),
 
 
-```
-#### Native button
-```
+// Native Button
 UIButton.native(
     label: "Button",
     onPressed: () => print('Call API'),
 ),
 
+
 ```
 
-#### Heading
+
+
+## `UIHeading`
+
+This class can be used to create custom headings or text content.
+
+To create default styles for the heading you need to create a class of type `UIHeadingDefaults`.
+
+You can have a separated directory where you add all your default styles.
+
+
 ```
-/// Set article title styles
+// styles/headings.dart
 
 final articleTitle = UIHeadingDefaults(
     heading: 2,
@@ -116,74 +151,151 @@ final articleTitle = UIHeadingDefaults(
     fontWeight: FontWeight.bold,
 );
 
+```
+We can also add custom styles to UIHeading as well
+
+```
+/// Use Google Fonts to set font family and extend stylyes 
+
+final articleTitleLato = UIHeadingDefaults(
+    color: Colors.pink,
+    style: GoogleFonts.lato(
+      fontSize: 40.0,
+    ),
+);
+
+
+```
+
+Then use the headings anywhere on you application. 
+```
+import 'styles/headings.dart'
+
+// Use articleTitle
 UIHeading(
     as: articleTitle,
-    text: 'Heading 2',
+    text: 'Article Title',
+),
+
+
+// Use articleTitleLato
+UIHeading(
+    as: articleTitleLato,
+    text: 'Big title using font Lato',
 ),
 ```
 
-#### Text input
+
+## `UITextField`
+
+This class renders a input text field.
+
+To create default styles for the text field you need to create a class of type `UITextFieldDefaults`.
+
+You can have a separated directory where you add all your default styles.
+
+There are two kind of text fields you can choose from:
 ```
-/// Set primary text input styles
+UITextField(),
+UITextField.native(),
+```
+
+```
+// styles/inputs.dart
+
 
 final primaryInput = UITextFieldDefaults(
-  borderColor: Colors.black,
-  borderRadius: 20,
+  borderColor: Colors.black45,
+  borderRadius: 8,
   borderType: UIBorderType.outlineBorder,
   borderWidth: 2.0,
-  focusBorderColor: Colors.green,
-  hintColor: Colors.white,
-  bgColor: Colors.purple.withOpacity(0.6),
+  hintColor: Colors.black54,
+  bgColor: Colors.white,
 );
+
+```
+
+Then use the inputs anywhere on you application. 
+```
+import 'styles/inputs.dart'
 
 UITextField(
     as: primaryInput,
     hint: 'Email',
 ),
 
-```
-
-#### Native text input
-```
+// Native Text Field
 UITextField.native(
     hint: 'Email',
 ),
-```
-#### Action Sheets
+
 ```
 
-/// Creates a Native Action Sheet Factory
+
+
+
+
+
+
+
+## `UIActionSheet`
+
+
+This class creates a Native Action Sheet.
+
+Compared with the other classes in this packages `UIActionSheet` is a bit more verbose.
+However you write once for all platforms.
+
+### How to use:
+
+Create a function that calls `UIActionSheet.show()`.
+
+The actions need to be of type `UIAction`.
+
+Call the function when you need it (eg.: on tap on a button)
+
+See example below:
+
+```
+// Creates a Native Action Sheet Factory
 
 void _openActionSheet(BuildContext context) {
   UIActionSheet.show(
     context,
+
+    /// TITLE
     title: UIHeading(
       text: 'Select you favorite color',
       color: Colors.blue,
       textAlign: TextAlign.center,
       heading: 5,
     ),
+
+    /// CONTENT
     content: Text('We will use the color on your profile.'),
-    // forceAndroid: true,
+
+    /// ACTIONS
     actions: [
-      ActionSheetAction(
+      UIAction(
         child: Text('Red'),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      ActionSheetAction(
+      UIAction(
         child: Text('Green'),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      ActionSheetAction(
+      UIAction(
         child: Text('Bue'),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      ActionSheetAction(
+      UIAction(
         child: Text('Pink'),
         onPressed: () => Navigator.of(context).pop(),
       ),
     ],
-    cancel: ActionSheetAction(
+
+    /// CANCEL BUTTON
+    cancel: UIAction(
       child: UIHeading(
         text: 'Cancel',
         color: Colors.red,
@@ -194,7 +306,7 @@ void _openActionSheet(BuildContext context) {
   );
 }
 
-/// Will open  action sheet based on the current OS
+// Will open  action sheet based on the current OS
 
 UIButton.solid(
     as: solidButtonStyles,
@@ -204,29 +316,45 @@ UIButton.solid(
 
 ```
 
-#### Dialogs
+## UIDialog
+
+
+This class creates a Native Dialog.
+
+Compared with the other classes in this packages  `UIDialog` is a bit more verbose.
+However you write once for all platforms.
+
+
+### How to use:
+
+Create a function that calls `UIDialog.show()`.
+
+The actions need to be of type `UIAction`.
+
+Call the function when you need it (eg.: on tap on a button)
+
+See example below:
+
 ```
-/// Creates a Native Dialog Factory
+// Creates a Native Dialog Factory
 
 void _openDialog(BuildContext context) {
-  DialogFactory.showAlertDialog(
+  UIDialog.show(
     context,
-    title: Text('Are you sure?'),
-    content: Text('You cannot reverse this action.'),
-    actions: [
-      DialogAction(
-        child: Text('YES'),
-        onPressed: () {
-          ///
-          /// Call API
-          callApi();
 
-          ///
-          /// Close dialog
-          Navigator.of(context).pop();
-        },
+    /// TITLE
+    title: Text('Are you sure?'),
+
+    /// CONTENT
+    content: Text('You cannot reverse this action.'),
+
+    /// ACTIONS
+    actions: [
+      UIAction(
+        child: Text('YES'),
+        onPressed: () => print('YES'),
       ),
-      DialogAction(
+      UIAction(
         child: Text('NO'),
         onPressed: () => Navigator.of(context).pop(),
       ),
@@ -234,7 +362,7 @@ void _openDialog(BuildContext context) {
   );
 }
 
-/// Will open a dialog based on the current OS
+// Will open a dialog based on the current OS
 
 UIButton.solid(
     as: solidButtonStyles,

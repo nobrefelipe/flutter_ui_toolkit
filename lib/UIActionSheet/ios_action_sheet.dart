@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'action_sheet_action.dart';
+import '../models/UIAction.dart';
 import 'iaction_sheet.dart';
 
 ///
@@ -11,8 +11,8 @@ class IosActionSheet implements IActionSheet {
     BuildContext context,
     Widget title,
     Widget content,
-    List<ActionSheetAction> actions,
-    ActionSheetAction? cancel,
+    List<UIAction> actions,
+    UIAction? cancel,
   ) {
     return CupertinoActionSheet(
       title: title,

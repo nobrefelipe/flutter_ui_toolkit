@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './dialog_action.dart';
+import '../models/UIAction.dart';
 import './idialog.dart';
 
 ///
@@ -10,7 +10,7 @@ class AndroidDialog implements IDialog {
   Widget create(
     Widget title,
     Widget content,
-    List<DialogAction> actions,
+    List<UIAction> actions,
   ) {
     return AlertDialog(
       title: title,

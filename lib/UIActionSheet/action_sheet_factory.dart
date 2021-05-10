@@ -1,9 +1,9 @@
+import '../models/UIAction.dart';
 import 'package:universal_io/io.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'android_action_sheet.dart';
-import 'action_sheet_action.dart';
 import 'iaction_sheet.dart';
 import 'ios_action_sheet.dart';
 
@@ -15,8 +15,8 @@ class UIActionSheet {
     BuildContext context, {
     Widget? title,
     Widget? content,
-    List<ActionSheetAction>? actions,
-    ActionSheetAction? cancel,
+    List<UIAction>? actions,
+    UIAction? cancel,
     bool forceAndroid = false,
     bool forceIos = false,
   }) {

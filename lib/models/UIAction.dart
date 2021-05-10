@@ -1,5 +1,5 @@
-class ActionSheetAction<T> {
-  ActionSheetAction({
+class UIAction<T> {
+  UIAction({
     required this.child,
     required this.onPressed,
   });

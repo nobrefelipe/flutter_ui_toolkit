@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'action_sheet_action.dart';
+import '../models/UIAction.dart';
 import 'iaction_sheet.dart';
 
 ///
@@ -11,8 +11,8 @@ class AndroidActionSheet implements IActionSheet {
     BuildContext context,
     Widget title,
     Widget content,
-    List<ActionSheetAction> actions,
-    ActionSheetAction? cancel,
+    List<UIAction> actions,
+    UIAction? cancel,
   ) {
     return BottomSheet(
       onClosing: () {},
@@ -42,7 +42,7 @@ class AndroidActionSheet implements IActionSheet {
     );
   }
 
-  Widget _button(ActionSheetAction action) {
+  Widget _button(UIAction action) {
     return Column(
       children: [
         Divider(height: 1),
@@ -56,7 +56,7 @@ class AndroidActionSheet implements IActionSheet {
     );
   }
 
-  Widget _cancelButton(BuildContext context, ActionSheetAction cancel) {
+  Widget _cancelButton(BuildContext context, UIAction cancel) {
     return Column(
       children: [
         Divider(),

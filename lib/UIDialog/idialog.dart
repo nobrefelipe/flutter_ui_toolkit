@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import './dialog_action.dart';
+import 'package:flutter_ui_toolkit/flutter_ui_toolkit.dart';
+import '../models/UIAction.dart';
 
 abstract class IDialog {
   Widget create(
     Widget title,
     Widget content,
-    List<DialogAction> actions,
+    List<UIAction> actions,
   );
 }

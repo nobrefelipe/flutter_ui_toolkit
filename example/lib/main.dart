@@ -29,7 +29,7 @@ void _openDialog(BuildContext context) {
     title: Text('Are you sure?'),
     content: Text('You cannot reverse this action.'),
     actions: [
-      DialogAction(
+      UIAction(
         child: Text('YES'),
         onPressed: () {
           ///
@@ -40,7 +40,7 @@ void _openDialog(BuildContext context) {
           Navigator.of(context).pop();
         },
       ),
-      DialogAction(
+      UIAction(
         child: Text('NO'),
         onPressed: () => Navigator.of(context).pop(),
       ),
@@ -63,24 +63,24 @@ void _openActionSheet(BuildContext context) {
     content: Text('We will use the color on your profile.'),
     // forceAndroid: true,
     actions: [
-      ActionSheetAction(
+      UIAction(
         child: Text('Red'),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      ActionSheetAction(
+      UIAction(
         child: Text('Green'),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      ActionSheetAction(
+      UIAction(
         child: Text('Bue'),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      ActionSheetAction(
+      UIAction(
         child: Text('Pink'),
         onPressed: () => Navigator.of(context).pop(),
       ),
     ],
-    cancel: ActionSheetAction(
+    cancel: UIAction(
       child: UIHeading(
         text: 'Cancel',
         color: Colors.red,
