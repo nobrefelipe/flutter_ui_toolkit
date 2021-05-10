@@ -317,7 +317,7 @@ UIButton.solid(
 
 ```
 
-## UIDialog
+## `UIDialog`
 
 
 This class creates a Native Dialog.
