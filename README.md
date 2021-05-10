@@ -77,7 +77,7 @@ This is useful when you want to have one widget that displays the right look and
 
 This class provides a full customizable button.
 
-There are three kind of buttons  you can choose from:
+There are three kind of buttons you can choose from:
 ```
 UIButton.solid(),
 UIButton.outlined(),
@@ -102,7 +102,7 @@ final primaryButton = UIButtonDefaults(
 );
 ```
 
-Then use the button anywhere on you application. 
+Then use the button anywhere in your application. 
 ```
 
 import 'styles/buttons.dart';
@@ -167,7 +167,7 @@ final articleTitleLato = UIHeadingDefaults(
 
 ```
 
-Then use the headings anywhere on you application. 
+Then use the headings anywhere in your application. 
 ```
 import 'styles/headings.dart'
 
@@ -190,15 +190,16 @@ UIHeading(
 
 This class renders a input text field.
 
-To create default styles for the text field you need to create a class of type `UITextFieldDefaults`.
-
-You can have a separated directory where you add all your default styles.
 
 There are two kind of text fields you can choose from:
 ```
 UITextField(),
 UITextField.native(),
 ```
+
+To create default styles for the text field you need to create a class of type `UITextFieldDefaults`.
+
+You can have a separated directory where you add all your default styles.
 
 ```
 // styles/inputs.dart
@@ -215,7 +216,7 @@ final primaryInput = UITextFieldDefaults(
 
 ```
 
-Then use the inputs anywhere on you application. 
+Then use the inputs anywhere in your application. 
 ```
 import 'styles/inputs.dart'
 
@@ -243,7 +244,7 @@ UITextField.native(
 
 This class creates a Native Action Sheet.
 
-Compared with the other classes in this packages `UIActionSheet` is a bit more verbose.
+Compared with the other classes in this package,`UIActionSheet` is a bit more verbose.
 However you write once for all platforms.
 
 ### How to use:
@@ -321,7 +322,7 @@ UIButton.solid(
 
 This class creates a Native Dialog.
 
-Compared with the other classes in this packages  `UIDialog` is a bit more verbose.
+Compared with the other classes in this package,  `UIDialog` is a bit more verbose.
 However you write once for all platforms.
 
 
@@ -370,4 +371,17 @@ UIButton.solid(
     onPressed: () => _openDialog(context),
 ),
 ```
+
+
+If you find any bug or want to request a feature, feel free to open an issue on Github.
+
+I will be improving this package bit by bit and will always try to keep it simple and objective.
+
+If you want to connect with me, send a request on Linkedin:
+
+https://www.linkedin.com/in/felipe-nobre/
+
+### Thanks for watching :)
+
+
 
