@@ -1,4 +1,8 @@
+## [0.0.3] - 10/05/2021.
+* Use UIAction for actions in UIDialog and UIActionSheet
+* Improve documentation
 ## [0.0.2+7] - 08/05/2021.
+
 * Fix styles for UIHeading
 ## [0.0.2+6] - 08/05/2021.
 * add override styles for UIHeading
