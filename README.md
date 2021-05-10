@@ -49,7 +49,7 @@ This is useful when you want to have one widget that displays the right look and
         </tr>
         <tr>
             <td>Containers</td>
-            <td style="color: #ff3434;">in progress</td>
+            <td style="color: #ff3434;">done</td>
         </tr>
         <tr>
             <td>Modals</td>
@@ -85,7 +85,7 @@ This is useful when you want to have one widget that displays the right look and
 ## `UIButton`
 
 
-This class provides a full customizable button.
+This widget provides a full customizable button.
 
 There are three kind of buttons you can choose from:
 ```
@@ -145,7 +145,7 @@ UIButton.native(
 
 ## `UIHeading`
 
-This class can be used to create custom headings or text content.
+This widget can be used to create custom headings or text content.
 
 To create default styles for the heading you need to create a class of type `UIHeadingDefaults`.
 
@@ -198,7 +198,7 @@ UIHeading(
 
 ## `UITextField`
 
-This class renders a input text field.
+This widget renders a input text field.
 
 
 There are two kind of text fields you can choose from:
@@ -242,17 +242,49 @@ UITextField.native(
 
 ```
 
+## `UIContainer`
 
+This widget renders a customizable Container.
 
+To create default styles for the container you need to create a class of type `UIContainerDefaults`.
 
+You can set the size of the contianer by using the `widthFactor` argument.
 
+You can have a separated directory where you add all your default styles.
 
+```
+
+// styles/containers.dart
+
+final errorContainer = UIContainerDefaults(
+  padding: EdgeInsets.all(20),
+  borderRadius: 10,
+  widthFactor: 1.0, // make full width
+  borderColor: Colors.red,
+  borderWidth: 2.0,
+  color: Colors.red.shade100,
+);
+
+```
+
+Then use the button anywhere in your application. 
+```
+
+import 'styles/containers.dart';
+
+// Show container with error styling
+UIContainer(
+  as: errorContainer,
+  child: Text('This is a box with a nice shadow\nand a cool rounded border.'),
+),
+
+```
 
 
 ## `UIActionSheet`
 
 
-This class creates a Native Action Sheet.
+This widget creates a Native Action Sheet.
 
 Compared with the other classes in this package,`UIActionSheet` is a bit more verbose.
 However you write once for all platforms.
@@ -330,7 +362,7 @@ UIButton.solid(
 ## `UIDialog`
 
 
-This class creates a Native Dialog.
+This widget creates a Native Dialog.
 
 Compared with the other classes in this package,  `UIDialog` is a bit more verbose.
 However you write once for all platforms.

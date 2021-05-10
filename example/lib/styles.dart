@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_toolkit/UITextField/UITextField.dart';
-import 'package:flutter_ui_toolkit/models/UIButtonDefaults.dart';
-import 'package:flutter_ui_toolkit/models/UIHeadingDefaults.dart';
-import 'package:flutter_ui_toolkit/models/UITextFieldDefaults.dart';
+import 'package:flutter_ui_toolkit/flutter_ui_toolkit.dart';
 
 ///
 /// Solid Button Styles
@@ -45,4 +42,17 @@ final primaryInput = UITextFieldDefaults(
 final smallTitle = UIHeadingDefaults(
   color: Colors.black54,
   heading: 6,
+);
+
+///
+/// Set UIContainer defaults
+///
+final errorContainer = UIContainerDefaults(
+  padding: EdgeInsets.all(20),
+
+  borderRadius: 10,
+  widthFactor: 1.0, // make full width
+  borderColor: Colors.red,
+  borderWidth: 2.0,
+  color: Colors.red.shade100,
 );

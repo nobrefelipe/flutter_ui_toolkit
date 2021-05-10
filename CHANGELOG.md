@@ -1,4 +1,13 @@
+## [0.0.3+1] - 10/05/2021.
+* Added UIContainer widget
+```
+UIContainer(
+  as: errorContainer,
+  child: Text('This is a box with a nice shadow\nand a cool rounded border.'),
+),
+```
 ## [0.0.3] - 10/05/2021.
+
 * Use UIAction for actions in UIDialog and UIActionSheet
 * Improve documentation
 ## [0.0.2+7] - 08/05/2021.

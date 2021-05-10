@@ -98,140 +98,161 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Examples'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ///
-            ///
-            ///
-            UIHeading(
-              text: 'BUTTONS',
-              heading: 4,
-              fontWeight: FontWeight.w700,
-            ),
-            SizedBox(height: 20),
-
-            ///
-            ///
-            ///
-            UIHeading(
-              as: smallTitle,
-              text: 'Solid Button with icon',
-            ),
-            SizedBox(height: 10),
-
-            ///
-            ///
-            ///
-            UIButton.solid(
-              as: solidButtonStyles,
-              label: "Open Dialog",
-
-              ///  Will open a dialog based on the current OS
-              onPressed: () => _openDialog(context),
-              icon: Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: Colors.white,
-                size: 20,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ///
+              ///
+              ///
+              UIHeading(
+                text: 'BUTTONS',
+                heading: 4,
+                fontWeight: FontWeight.w700,
               ),
-            ),
-            SizedBox(height: 20),
+              SizedBox(height: 20),
 
-            ///
-            ///
-            ///
-            UIHeading(
-              as: smallTitle,
-              text: 'Outlined Button with defaults',
-            ),
-            SizedBox(height: 10),
-
-            ///
-            ///
-            ///
-            UIButton.outlined(
-              as: outlinedButtonStyles,
-              label: "Open Action Sheet",
-
-              ///  Will open a action sheet based on the current OS
-              onPressed: () => _openActionSheet(context),
-              icon: Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: Colors.pink,
-                size: 20,
+              ///
+              ///
+              ///
+              UIHeading(
+                as: smallTitle,
+                text: 'Solid Button with icon',
               ),
-            ),
-            SizedBox(height: 20),
+              SizedBox(height: 10),
 
-            ///
-            ///
-            ///
-            UIHeading(
-              as: smallTitle,
-              text: 'Native Button',
-            ),
-            SizedBox(height: 10),
+              ///
+              ///
+              ///
+              UIButton.solid(
+                as: solidButtonStyles,
+                label: "Open Dialog",
 
-            ///
-            ///
-            ///
-            UIButton.native(
-              label: 'Native Button',
-              onPressed: () => print('native button'),
-              bgColor: Colors.blue,
-            ),
-            SizedBox(height: 40),
+                ///  Will open a dialog based on the current OS
+                onPressed: () => _openDialog(context),
+                icon: Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Colors.white,
+                  size: 20,
+                ),
+              ),
+              SizedBox(height: 20),
 
-            ///
-            ///
-            ///
-            UIHeading(
-              text: 'TEXT INPUTS',
-              heading: 4,
-              fontWeight: FontWeight.w700,
-            ),
-            SizedBox(height: 20),
-            //
-            ///
-            ///
-            UIHeading(
-              as: smallTitle,
-              text: 'Custom Text Input',
-            ),
-            SizedBox(height: 10),
+              ///
+              ///
+              ///
+              UIHeading(
+                as: smallTitle,
+                text: 'Outlined Button with defaults',
+              ),
+              SizedBox(height: 10),
 
-            ///
-            ///
-            ///
-            UITextField(
-              as: primaryInput,
-              hint: 'Email',
-              prefix: Icon(Icons.email_outlined),
-              onChanged: (value) => print(value),
-            ),
-            SizedBox(height: 20),
+              ///
+              ///
+              ///
+              UIButton.outlined(
+                as: outlinedButtonStyles,
+                label: "Open Action Sheet",
 
-            ///
-            ///
-            ///
-            UIHeading(
-              as: smallTitle,
-              text: 'Native Text Input',
-            ),
-            SizedBox(height: 10),
+                ///  Will open a action sheet based on the current OS
+                onPressed: () => _openActionSheet(context),
+                icon: Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Colors.pink,
+                  size: 20,
+                ),
+              ),
+              SizedBox(height: 20),
 
-            ///
-            ///
-            ///
-            UITextField.native(
-              hint: 'Search',
-              label: 'Search',
-              onChanged: (value) => print(value),
-              suffix: Icon(Icons.search_rounded),
-            ),
-          ],
+              ///
+              ///
+              ///
+              UIHeading(
+                as: smallTitle,
+                text: 'Native Button',
+              ),
+              SizedBox(height: 10),
+
+              ///
+              ///
+              ///
+              UIButton.native(
+                label: 'Native Button',
+                onPressed: () => print('native button'),
+                bgColor: Colors.blue,
+              ),
+              SizedBox(height: 40),
+
+              ///
+              ///
+              ///
+              UIHeading(
+                text: 'TEXT INPUTS',
+                heading: 4,
+                fontWeight: FontWeight.w700,
+              ),
+              SizedBox(height: 20),
+              //
+              ///
+              ///
+              UIHeading(
+                as: smallTitle,
+                text: 'Custom Text Input',
+              ),
+              SizedBox(height: 10),
+
+              ///
+              ///
+              ///
+              UITextField(
+                as: primaryInput,
+                hint: 'Email',
+                prefix: Icon(Icons.email_outlined),
+                onChanged: (value) => print(value),
+              ),
+              SizedBox(height: 20),
+
+              ///
+              ///
+              ///
+              UIHeading(
+                as: smallTitle,
+                text: 'Native Text Input',
+              ),
+              SizedBox(height: 10),
+
+              ///
+              ///
+              ///
+              UITextField.native(
+                hint: 'Search',
+                label: 'Search',
+                onChanged: (value) => print(value),
+                suffix: Icon(Icons.search_rounded),
+              ),
+              SizedBox(height: 30),
+
+              ///
+              ///
+              ///
+              UIHeading(
+                as: smallTitle,
+                text: 'UIContainer',
+              ),
+              SizedBox(height: 10),
+
+              ///
+              ///
+              ///
+              UIContainer(
+                as: errorContainer,
+                child: Text('This is a box with a nice shadow\nand a cool rounded border.'),
+              ),
+              SizedBox(height: 40),
+            ],
+          ),
         ),
       ),
     );
