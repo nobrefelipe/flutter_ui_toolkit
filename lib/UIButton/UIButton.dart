@@ -23,44 +23,44 @@ class UIButton {
     double? widthFactor,
     Widget? icon,
   }) {
-    return OutlinedButton(
-      onPressed: onPressed as void Function(),
-      style: ButtonStyle(
-        overlayColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused)) return Colors.black12;
-            if (states.contains(MaterialState.hovered)) return Colors.black12;
-            if (states.contains(MaterialState.pressed)) return Colors.black12;
-            return null; // Defer to the widget's default.
-          },
-        ),
-        backgroundColor: MaterialStateProperty.resolveWith<Color>(
-          (Set<MaterialState> states) {
-            return UIUtils.getColor(as, as?.bgColor, bgColor, Colors.blue);
-          },
-        ),
-        shape: MaterialStateProperty.all<OutlinedBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              UIUtils.getDouble(as, as?.borderRadius, borderRadius, 0.0),
+    return FractionallySizedBox(
+      widthFactor: UIUtils.getDouble(as, as?.widthFactor, widthFactor, 1.0),
+      child: OutlinedButton(
+        onPressed: onPressed as void Function(),
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all<EdgeInsets>(
+            as?.padding ?? EdgeInsets.all(16.0),
+          ),
+          overlayColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+              if (states.contains(MaterialState.focused)) return Colors.black12;
+              if (states.contains(MaterialState.hovered)) return Colors.black12;
+              if (states.contains(MaterialState.pressed)) return Colors.black12;
+              return null; // Defer to the widget's default.
+            },
+          ),
+          backgroundColor: MaterialStateProperty.resolveWith<Color>(
+            (Set<MaterialState> states) {
+              return UIUtils.getColor(as, as?.bgColor, bgColor, Colors.blue);
+            },
+          ),
+          shape: MaterialStateProperty.all<OutlinedBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                UIUtils.getDouble(as, as?.borderRadius, borderRadius, 0.0),
+              ),
             ),
           ),
+          side: MaterialStateProperty.resolveWith<BorderSide>(
+            (Set<MaterialState> states) {
+              return BorderSide(
+                width: UIUtils.getDouble(as, as?.borderWidth, borderWidth, 2.0),
+                color: UIUtils.getColor(as, as?.borderColor, borderColor, Colors.transparent),
+              );
+            },
+          ),
         ),
-        side: MaterialStateProperty.resolveWith<BorderSide>(
-          (Set<MaterialState> states) {
-            return BorderSide(
-              width: UIUtils.getDouble(as, as?.borderWidth, borderWidth, 2.0),
-              color: UIUtils.getColor(as, as?.borderColor, borderColor, Colors.transparent),
-            );
-          },
-        ),
-      ),
-      child: FractionallySizedBox(
-        widthFactor: UIUtils.getDouble(as, as?.widthFactor, widthFactor, 1.0),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 6.0),
-          child: UIButtonContent(as, label, labelColor, icon),
-        ),
+        child: UIButtonContent(as, label, labelColor, icon),
       ),
     );
   }
@@ -78,40 +78,41 @@ class UIButton {
     double? widthFactor,
     Widget? icon,
   }) {
-    return TextButton(
-      onPressed: onPressed as void Function(),
-      style: ButtonStyle(
-        overlayColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused)) return Colors.black12;
-            if (states.contains(MaterialState.hovered)) return Colors.black12;
-            if (states.contains(MaterialState.pressed)) return Colors.black12;
-            return null; // Defer to the widget's default.
-          },
-        ),
-        backgroundColor: MaterialStateProperty.resolveWith<Color>(
-          (Set<MaterialState> states) {
-            return UIUtils.getColor(as, as?.bgColor, bgColor, Colors.blue);
-          },
-        ),
-        elevation: MaterialStateProperty.resolveWith<double>(
-          (Set<MaterialState> states) {
-            return UIUtils.getDouble(as, as?.elevation, elevation, 1.0);
-          },
-        ),
-        shape: MaterialStateProperty.all<OutlinedBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              UIUtils.getDouble(as, as?.borderRadius, borderRadius, 0.0),
+    return FractionallySizedBox(
+      alignment: Alignment.centerLeft,
+      widthFactor: UIUtils.getDouble(as, as?.widthFactor, widthFactor, 1.0),
+      child: TextButton(
+        child: UIButtonContent(as, label, labelColor, icon),
+        onPressed: onPressed as void Function(),
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all<EdgeInsets>(
+            as?.padding ?? EdgeInsets.all(16.0),
+          ),
+          overlayColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+              if (states.contains(MaterialState.focused)) return Colors.black12;
+              if (states.contains(MaterialState.hovered)) return Colors.black12;
+              if (states.contains(MaterialState.pressed)) return Colors.black12;
+              return null; // Defer to the widget's default.
+            },
+          ),
+          backgroundColor: MaterialStateProperty.resolveWith<Color>(
+            (Set<MaterialState> states) {
+              return UIUtils.getColor(as, as?.bgColor, bgColor, Colors.blue);
+            },
+          ),
+          elevation: MaterialStateProperty.resolveWith<double>(
+            (Set<MaterialState> states) {
+              return UIUtils.getDouble(as, as?.elevation, elevation, 1.0);
+            },
+          ),
+          shape: MaterialStateProperty.all<OutlinedBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                UIUtils.getDouble(as, as?.borderRadius, borderRadius, 0.0),
+              ),
             ),
           ),
-        ),
-      ),
-      child: FractionallySizedBox(
-        widthFactor: UIUtils.getDouble(as, as?.widthFactor, widthFactor, 1.0),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: UIButtonContent(as, label, labelColor, icon),
         ),
       ),
     );

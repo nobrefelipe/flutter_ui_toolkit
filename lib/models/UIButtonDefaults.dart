@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 import 'UIDefaults.dart';
 
 class UIButtonDefaults extends UIDefaults {
@@ -31,6 +33,10 @@ class UIButtonDefaults extends UIDefaults {
   /// Sets the button's size percentage
   double? widthFactor;
 
+  ///
+  /// Sets the button's padding
+  EdgeInsets? padding;
+
   UIButtonDefaults({
     this.borderColor,
     this.borderRadius,
@@ -39,5 +45,6 @@ class UIButtonDefaults extends UIDefaults {
     this.labelColor,
     this.bgColor,
     this.widthFactor,
+    this.padding,
   });
 }

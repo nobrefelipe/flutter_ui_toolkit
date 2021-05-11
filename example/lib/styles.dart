@@ -9,7 +9,6 @@ final solidButtonStyles = UIButtonDefaults(
   borderRadius: 50.0,
   labelColor: Colors.white,
   bgColor: Colors.pink,
-  widthFactor: 0.6,
 );
 
 ///
