@@ -29,7 +29,7 @@ class UIButton {
         onPressed: onPressed as void Function(),
         style: ButtonStyle(
           padding: MaterialStateProperty.all<EdgeInsets>(
-            as?.padding ?? EdgeInsets.all(16.0),
+            as?.padding ?? EdgeInsets.all(20.0),
           ),
           overlayColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
@@ -60,7 +60,9 @@ class UIButton {
             },
           ),
         ),
-        child: UIButtonContent(as, label, labelColor, icon),
+        child: FractionallySizedBox(
+          child: UIButtonContent(as, label, labelColor, icon),
+        ),
       ),
     );
   }
@@ -77,6 +79,7 @@ class UIButton {
     double? elevation,
     double? widthFactor,
     Widget? icon,
+    Color? shadowColor,
   }) {
     return FractionallySizedBox(
       alignment: Alignment.centerLeft,
@@ -86,7 +89,7 @@ class UIButton {
         onPressed: onPressed as void Function(),
         style: ButtonStyle(
           padding: MaterialStateProperty.all<EdgeInsets>(
-            as?.padding ?? EdgeInsets.all(16.0),
+            as?.padding ?? EdgeInsets.all(20.0),
           ),
           overlayColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
@@ -104,6 +107,11 @@ class UIButton {
           elevation: MaterialStateProperty.resolveWith<double>(
             (Set<MaterialState> states) {
               return UIUtils.getDouble(as, as?.elevation, elevation, 1.0);
+            },
+          ),
+          shadowColor: MaterialStateProperty.resolveWith<Color>(
+            (Set<MaterialState> states) {
+              return UIUtils.getColor(as, as?.shadowColor, shadowColor, Colors.black);
             },
           ),
           shape: MaterialStateProperty.all<OutlinedBorder>(

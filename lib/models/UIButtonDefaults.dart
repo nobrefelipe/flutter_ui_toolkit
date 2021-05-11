@@ -22,6 +22,10 @@ class UIButtonDefaults extends UIDefaults {
   double? elevation;
 
   ///
+  /// Sets the button's shadow color
+  Color? shadowColor;
+
+  ///
   /// Sets the button's label color
   Color? labelColor;
 
@@ -46,5 +50,6 @@ class UIButtonDefaults extends UIDefaults {
     this.bgColor,
     this.widthFactor,
     this.padding,
+    this.shadowColor,
   });
 }

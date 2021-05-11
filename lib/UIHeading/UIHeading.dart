@@ -34,8 +34,8 @@ class UIHeading extends StatelessWidget {
           ? TextStyle(
               color: UIUtils.getColor(as, as?.color, color, Colors.black),
               fontSize: as?.fontSize ?? getHeadingSize(heading ?? as?.heading),
-              fontWeight: as?.fontWeight ?? fontWeight ?? FontWeight.normal,
-              fontFamily: as?.fontFamily ?? fontFamily ?? null,
+              fontWeight: fontWeight ?? as?.fontWeight ?? FontWeight.normal,
+              fontFamily: fontFamily ?? as?.fontFamily ?? null,
             )
           : as?.style ?? style,
       textAlign: textAlign ?? TextAlign.left,

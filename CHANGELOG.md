@@ -1,4 +1,6 @@
 
+## [0.0.3+4] - 11/05/2021.
+* minor tweaks
 ## [0.0.3+3] - 11/05/2021.
 * Added default padding capabilities to button
 ## [0.0.3+2] - 11/05/2021.
