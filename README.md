@@ -17,12 +17,13 @@ This is useful when you want to have one widget that displays the right look and
 
 
 ## Widgets
-* <a href="#UIButton">UIButton</a>
-* <a href="#UIHeading">UIHeading</a>
-* <a href="#UITextField">UITextField</a>
-* <a href="#UIContainer">UIContainer</a>
-* <a href="#UIActionSheet">UIActionSheet</a>
-* <a href="#UIDialog">UIDialog</a>
+* <a href="#uibutton">UIButton</a>
+* <a href="#uiheading">UIHeading</a>
+* <a href="#uibottomsheet">UIBottomSheet</a>
+* <a href="#uitextfield">UITextField</a>
+* <a href="#uicontainer">UIContainer</a>
+* <a href="#uiactionsheet">UIActionSheet</a>
+* <a href="#uidialog">UIDialog</a>
 
 
 ## Roadmap
@@ -37,10 +38,6 @@ This is useful when you want to have one widget that displays the right look and
     <tbody>
         <tr>
             <td>Modals</td>
-            <td style="color: #ff3434;">in progress</td>
-        </tr>
-        <tr>
-            <td>Bottom Sheets</td>
             <td style="color: #ff3434;">in progress</td>
         </tr>
     </tbody>
@@ -177,6 +174,56 @@ UIHeading(
     as: articleTitleLato,
     text: 'Big title using font Lato',
 ),
+```
+
+## `UIBottomSheet`
+
+Use `UIBottomSheet` when you want to display a bottomsheet.
+
+Set `floatted: true` if you want the bottom sheet to be floatted (have margin all around it, like some iOS bottom sheets)
+
+You can also have a `trailing` Widget that can be useful for a close button when you have `enableDrag` set to false.
+
+### How to use:
+
+Create a function that calls `UIBottomSheet.show()`. 
+
+Call the function when you need it (eg.: on tap on a button)
+
+```
+// Set up the bottom sheet
+
+Future<void> _openBottomSheet(BuildContext context) async {
+  await UIBottomSheet.show(
+    context: context,
+    floatted: true,
+    hideHead: false,
+    content: Container(
+      alignment: Alignment.center,
+      height: 400,
+      child: UIHeading(
+        heading: 3,
+        text: 'Some cool content',
+      ),
+    ),
+  );
+}
+
+// Open the bottom sheet 
+
+UIButton.native(
+  label: 'Open Bottom Sheet',
+  onPressed: () async {
+
+    // OPEN BOTTOM SHEET
+    // and wait until it's closed
+    await _openBottomSheet(context);
+
+    // proceed
+    print('Bottom sheet closed');
+  },
+),
+
 ```
 
 

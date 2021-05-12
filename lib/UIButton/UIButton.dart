@@ -29,7 +29,7 @@ class UIButton {
         onPressed: onPressed as void Function(),
         style: ButtonStyle(
           padding: MaterialStateProperty.all<EdgeInsets>(
-            as?.padding ?? EdgeInsets.all(20.0),
+            as?.padding ?? EdgeInsets.all(15.0),
           ),
           overlayColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
@@ -89,7 +89,7 @@ class UIButton {
         onPressed: onPressed as void Function(),
         style: ButtonStyle(
           padding: MaterialStateProperty.all<EdgeInsets>(
-            as?.padding ?? EdgeInsets.all(20.0),
+            as?.padding ?? EdgeInsets.all(15.0),
           ),
           overlayColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {

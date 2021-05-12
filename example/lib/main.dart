@@ -91,6 +91,22 @@ void _openActionSheet(BuildContext context) {
   );
 }
 
+Future<void> _openBottomSheet(BuildContext context) async {
+  await UIBottomSheet.show(
+    context: context,
+    floatted: true,
+    hideHead: false,
+    content: Container(
+      alignment: Alignment.center,
+      height: 400,
+      child: UIHeading(
+        heading: 3,
+        text: 'Some cool content',
+      ),
+    ),
+  );
+}
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -179,8 +195,11 @@ class MyHomePage extends StatelessWidget {
               ///
               ///
               UIButton.native(
-                label: 'Native Button',
-                onPressed: () => print('native button'),
+                label: 'Open Bottom Sheet',
+                onPressed: () async {
+                  await _openBottomSheet(context);
+                  print('Bottom sheet closed');
+                },
                 bgColor: Colors.blue,
               ),
               SizedBox(height: 40),

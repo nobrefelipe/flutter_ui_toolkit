@@ -1,3 +1,41 @@
+## [0.0.3+7] - 12/05/2021.
+* Add UIBottomSheet
+
+```
+// Set up the bottom sheet
+
+Future<void> _openBottomSheet(BuildContext context) async {
+  await UIBottomSheet.show(
+    context: context,
+    floatted: true,
+    hideHead: false,
+    content: Container(
+      alignment: Alignment.center,
+      height: 400,
+      child: UIHeading(
+        heading: 3,
+        text: 'Some cool content',
+      ),
+    ),
+  );
+}
+
+// Open the bottom sheet 
+
+UIButton.native(
+  label: 'Open Bottom Sheet',
+  onPressed: () async {
+
+    // OPEN BOTTOM SHEET
+    // and wait until it's closed
+    await _openBottomSheet(context);
+
+    // proceed
+    print('Bottom sheet closed');
+  },
+),
+```
+
 ## [0.0.3+6] - 12/05/2021.
 * README - fixed content link anchors
 ## [0.0.3+5] - 12/05/2021.

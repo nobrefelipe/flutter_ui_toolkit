@@ -5,8 +5,8 @@ export 'UITextField/UITextField.dart';
 export 'UIHeading/UIHeading.dart';
 export 'UIDialog/dialog_factory.dart';
 export 'UIContainer/UIContainer.dart';
-
 export 'UIActionSheet/action_sheet_factory.dart';
+export 'UIBottomSheet/UIBottomSheet.dart';
 
 export 'models/UIButtonDefaults.dart';
 export 'models/UITextFieldDefaults.dart';
