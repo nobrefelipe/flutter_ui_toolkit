@@ -184,6 +184,19 @@ Set `floatted: true` if you want the bottom sheet to be floatted (have margin al
 
 You can also have a `trailing` Widget that can be useful for a close button when you have `enableDrag` set to false.
 
+<table>
+<tr>
+<td>Full Width</td>
+<td><span style="width: 40px"></span></td>
+<td>Floatted</td>
+<tr>
+<tr>
+<td><img src="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202021-05-12%20at%2014.11.46.png?alt=media&token=21c1e20d-c0c5-4674-ab0f-c08e3b54618b" width="250"></td>
+<td><span style="width: 40px"></span></td>
+<td><img src="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202021-05-12%20at%2014.11.32.png?alt=media&token=5e65a36d-8d90-481c-8ffb-b053cf791bba" width="250"></td>
+</tr>
+</table>
+
 ### How to use:
 
 Create a function that calls `UIBottomSheet.show()`. 
