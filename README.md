@@ -16,8 +16,16 @@ In addition to custom styles, this package also provides `native` look and feel 
 This is useful when you want to have one widget that displays the right look and feel based on the Platform.
 
 
+## Widgets
+* <a href="#UIButton">UIButton</a>
+* <a href="#UIHeading">UIHeading</a>
+* <a href="#UITextField">UITextField</a>
+* <a href="#UIContainer">UIContainer</a>
+* <a href="#UIActionSheet">UIActionSheet</a>
+* <a href="#UIDialog">UIDialog</a>
 
-## Widgets and Roadmap
+
+## Roadmap
 
 <table>
     <thead style="background-color: #666; color: #fff;">
@@ -27,30 +35,6 @@ This is useful when you want to have one widget that displays the right look and
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Buttons</td>
-            <td style="color: #0c0;">done</td>
-        </tr>
-        <tr>
-            <td>Headings</td>
-            <td style="color: #0c0;">done</td>
-        </tr>
-        <tr>
-            <td>Text Inputs</td>
-            <td style="color: #0c0;">done</td>
-        </tr>
-        <tr>
-            <td>Dialogs</td>
-            <td style="color: #ff3434;">done</td>
-        </tr>
-         <tr>
-            <td>Action Sheets</td>
-            <td style="color: #ff3434;">done</td>
-        </tr>
-        <tr>
-            <td>Containers</td>
-            <td style="color: #ff3434;">done</td>
-        </tr>
         <tr>
             <td>Modals</td>
             <td style="color: #ff3434;">in progress</td>
