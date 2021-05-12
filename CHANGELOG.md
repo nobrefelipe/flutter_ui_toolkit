@@ -1,4 +1,5 @@
-
+## [0.0.3+6] - 12/05/2021.
+* README - fixed content link anchors
 ## [0.0.3+5] - 12/05/2021.
 * README - add content links
 ## [0.0.3+4] - 11/05/2021.
