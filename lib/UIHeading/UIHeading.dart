@@ -13,6 +13,7 @@ class UIHeading extends StatelessWidget {
     this.overflow,
     this.fontFamily,
     this.style,
+    this.maxLines,
   });
 
   @required
@@ -25,6 +26,7 @@ class UIHeading extends StatelessWidget {
   final TextOverflow? overflow;
   final String? fontFamily;
   final TextStyle? style;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +42,7 @@ class UIHeading extends StatelessWidget {
           : as?.style ?? style,
       textAlign: textAlign ?? TextAlign.left,
       overflow: overflow,
+      maxLines: maxLines,
     );
   }
 }
